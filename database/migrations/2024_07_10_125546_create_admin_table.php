@@ -17,7 +17,7 @@ class CreateAdminTable extends Migration
             $table->string('adminName');
             $table->string('adminEmail')->unique();
             $table->string('adminPassword');
-            $table->timestamps(); // Adds created_at and updated_at columns
+            $table->timestamps(); 
         });
     }
 
