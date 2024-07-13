@@ -41,9 +41,7 @@
                 <li><a href="{{ route('partner#createMenu') }}" class="list-item">Create Menu</a></li>
                 <li class="list-item"><a href="/about">About</a></li>
                 <li class="list-item"><a href="/contact">Contact</a></li>
-                <div class="user-avatar list-item">
-                    <img src="{{ asset('images/user-icon.png') }}" alt="User Avatar">
-                </div>
+                
               
                 @if (Route::has('login'))
                     <div class="dropdowns">

@@ -52,9 +52,7 @@
                 <li class="list-item">><a href="{{ route('admin#allDeliveries') }}">Manage Deliveries</a></li>
                 <li class="list-item"><a href="/about">About</a></li>
                 <li class="list-item"><a href="/contact">Contact</a></li>
-                <div class="user-avatar list-item">
-                    <img src="{{ asset('images/user-icon.png') }}" alt="User Avatar">
-                </div>
+                
                 
                 @if (Route::has('login'))
                     <div class="dropdowns">
