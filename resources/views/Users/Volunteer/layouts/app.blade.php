@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>
         @yield('title')
@@ -20,9 +20,9 @@
     <link href="{{ asset('css/header.css') }}" rel="stylesheet">    
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">     
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">  
+
 </head>
-<body>
-    <!-- Start nav -->
+<body >
     <header class="header">
         <div class="container_header">
             <div class="logo">
@@ -33,43 +33,40 @@
             </div>
             
             <div class="user-info">
-                <li class="list-item"><a href="/">Home</a></li>
+                <li class="list-item"><a href="{{ route('volunteer#index') }}">Home</a></li>
+                <li class="list-item"><a href="{{ route('volunteer#viewAllMenu') }}">Menu</a></li>
                 <li class="list-item"><a href="/about">About</a></li>
                 <li class="list-item"><a href="/contact">Contact</a></li>
                 <div class="user-avatar list-item">
                     <img src="{{ asset('images/user-icon.png') }}" alt="User Avatar">
                 </div>
                 
-                <div class="user-name">Public User</div>
+                <div class="user-name">{{ Auth()->user()->name }}</div>
+
                 @if (Route::has('login'))
                     <div class="dropdowns">
                         <button class="dropdown-toggles">▼</button>
                         <div class="dropdown-menus">
-                            @auth
-                                <a href="{{ url('/dashboard') }}">Dashboard</a>
-                    
-                            @else
-                                <a href="{{ route('login') }}">Log in</a>
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}">Register</a>
-                                @endif
-                            @endauth
+                            <li><a class="dropdown-item" href="{{ route('member#updateProfile', Auth()->user()->id) }}">Update </a></li>
+                            <li><a class="dropdown-item" href="{{ route('deliver#AllDeliveryForVolunteer') }}">Deliveries </a></li>
+                            
+                            <li>
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <a>
+                                    <button type="submit" class="btn pt-0 pb-1 px-0 nav-link text-dark" style="button:focus { outline: none; }" >  <i class="fas fa-sign-out-alt" ></i> Logout </button>
+                                </a>
+                            </form>
                         </div>
                     </div>
                 @endif
             </div>
         </div>
     </header>
-    <!-- END nav -->
 
-    <!-- Content -->
-    @yield('content')
-    <!-- End Content -->
 
-    <!-- Start footer -->
-    <footer>
-        ©2024 Meals on Wheels
-    </footer> 
-    <!-- END footer -->
-</body>
-</html>
+
+
+
+
+
