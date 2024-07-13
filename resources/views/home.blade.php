@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
+   
+
+<head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,7 +19,7 @@
     </head>
     <body>     
         <header class="header">
-            <div class="container">
+            <div class="container_header">
                 <div class="logo">
                     <img src="{{ asset('images/logo.png') }}" alt="Meals on Wheels Logo">
                 </div>
@@ -46,11 +48,53 @@
         </header>
 
         <main>
-            <h1>utot</h1>
+            <!-- Slideshow container -->
+            <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 4</div>
+                <img src="{{ asset('images/img2.jpg') }}" style="width:100%">
+                <div class="text">Caption Text</div>
+            </div>
+        
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 4</div>
+                <img src="{{ asset('images/img2.jpg') }}" style="width:100%">
+                <div class="text">Caption Two</div>
+            </div>
+        
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 4</div>
+                <img src="{{ asset('images/img2.jpg') }}" style="width:100%">
+                <div class="text">Caption Three</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="{{ asset('images/img2.jpg') }}" style="width:100%">
+                <div class="text">Caption Four</div>
+            </div>
+        
+            <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
         </main>
 
         <footer>
             ©2024 Meals on Wheels
         </footer>      
     </body>
+    <script src={{ asset('js/home.js') }}></script>
 </html>
+
