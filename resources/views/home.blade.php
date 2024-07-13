@@ -11,41 +11,37 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
         <!-- CSS -->
-        <link href="{{ asset('css/home.css') }}" rel="stylesheet">       
+        <link href="{{ asset('css/home.css') }}" rel="stylesheet">  
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">      
     </head>
     <body>     
-        <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
-            <div class="flex lg:justify-center lg:col-start-2">
-                
+        <header class="header">
+            <div class="container">
+                <div class="logo">
+                    <img src="path/to/logo.png" alt="MerryMeals Logo">
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="path/to/user-avatar.png" alt="User Avatar">
+                    </div>
+                    <div class="user-name">Public User</div>
+                    @if (Route::has('login'))
+                        <div class="dropdown">
+                            <button class="dropdown-toggle">▼</button>
+                            <div class="dropdown-menu">
+                                @auth
+                                    <a href="{{ url('/dashboard') }}">Dashboard</a>
+                                @else
+                                    <a href="{{ route('login') }}">Log in</a>
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}">Register</a>
+                                    @endif
+                                @endauth
+                            </div>
+                        </div>
+                    @endif
+                </div>
             </div>
-            @if (Route::has('login'))
-                <nav class="-mx-3 flex flex-1 justify-end">
-                    @auth
-                        <a
-                            href="{{ url('/dashboard') }}"
-                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
-                        >
-                            Dashboard
-                        </a>
-                    @else
-                        <a
-                            href="{{ route('login') }}"
-                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
-                        >
-                            Log in
-                        </a>
-
-                        @if (Route::has('register'))
-                            <a
-                                href="{{ route('register') }}"
-                                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
-                            >
-                                Register
-                            </a>
-                        @endif
-                    @endauth
-                </nav>
-            @endif
         </header>
 
         <main>
