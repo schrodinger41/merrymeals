@@ -184,11 +184,11 @@
                   </div>
       
                   <div class="row mb-4">
-                        <label for="role" class="col-sm-4 col-form-label">Interest</label>
+                        <label for="role" class="col-sm-4 col-form-label">Register as: </label>
                         <div class="col-sm-8">
                         <select class="form-select form-select-lg" name="role" required>
-                            <option value="">Choose Your Interest</option>
-                            <option value="member">Get Meal</option>
+                            <option value="">Please select</option>
+                            <option value="member">Member</option>
                             <option value="partner">Partner</option>
                             <option value="volunteer">Volunteer</option>
                             {{-- <option value="donor">Donor</option> --}}
