@@ -10,8 +10,9 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
+
         <!-- CSS -->
-        <link href="{{ asset('css/home.css') }}" rel="stylesheet">       
+        <link href="{{ asset('css/home.css') }}">       
     </head>
     <body>     
         <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
