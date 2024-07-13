@@ -10,9 +10,14 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
+
         <!-- CSS -->
+<<<<<<< HEAD
         <link href="{{ asset('css/home.css') }}" rel="stylesheet">  
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">      
+=======
+        <link href="{{ asset('css/home.css') }}">       
+>>>>>>> 329980f477dac1dc4ae0a67e78f8b4ec137b1bc2
     </head>
     <body>     
         <header class="header">
