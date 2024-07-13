@@ -38,7 +38,7 @@
             
             <div class="user-info">
                 <li class="list-item"><a href="{{ route('partner#index') }}">Home</a></li>
-                <li><a href="{{ route('partner#createMenu') }}" class="list-item">Create Menu</a></li>
+                <li class="list-item"><a href="{{ route('partner#createMenu') }}">Create Menu</a></li>
                 <li class="list-item"><a href="/about">About</a></li>
                 <li class="list-item"><a href="/contact">Contact</a></li>
                 
