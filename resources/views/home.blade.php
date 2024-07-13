@@ -27,32 +27,29 @@
     @section('content')
 
         <main>
+
             <!-- Slideshow container -->
             <div class="slideshow-container">
 
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
-                <div class="numbertext">1 / 4</div>
-                <img src="{{ asset('images/img2.jpg') }}">
-                <div class="text">Caption Text</div>
+                <img src="{{ asset('images/img1.jpg') }}">
+                <div class="text">Provide <span style="color: var(--secondary-color);">Healthy</span> Meals</div>
             </div>
         
             <div class="mySlides fade">
-                <div class="numbertext">2 / 4</div>
                 <img src="{{ asset('images/img2.jpg') }}">
-                <div class="text">Caption Two</div>
+                <div class="text">Meals <span style="color: var(--accent-color);">Packed</span> with <span style="color: var(--accent-color);">Care</span></div>
             </div>
         
             <div class="mySlides fade">
-                <div class="numbertext">3 / 4</div>
-                <img src="{{ asset('images/img2.jpg') }}">
-                <div class="text">Caption Three</div>
+                <img src="{{ asset('images/img3.jpg') }}">
+                <div class="text"><span style="color: #FF7F7F;">Volunteer</span> to <span style="color: #FF7F7F;">Make</span> a <span style="color: #FF7F7F;">Difference</span></div>
             </div>
 
             <div class="mySlides fade">
-                <div class="numbertext">4 / 4</div>
-                <img src="{{ asset('images/img2.jpg') }}">
-                <div class="text">Caption Four</div>
+                <img src="{{ asset('images/img4.jpg') }}">
+                <div class="text">Deliver Meals with <span style="color: var(--primary-color);">Dedication</span></div>
             </div>
         
             <!-- Next and previous buttons -->
@@ -62,12 +59,34 @@
             <br>
             
             <!-- The dots/circles -->
-            <div style="text-align:center">
+            <div class="dot-container">
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
                 <span class="dot" onclick="currentSlide(4)"></span>
             </div>
+
+
+            <div class="home-content">
+                <div class="column">
+                    <h2>Join Us</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam nulla porttitor massa id neque aliquam vestibulum.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam nulla porttitor massa id neque aliquam vestibulum.
+                    </p>
+                </div>
+                <div class="column">
+                    <h2>Our Mission</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam nulla porttitor massa id neque aliquam vestibulum.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam nulla porttitor massa id neque aliquam vestibulum.
+                    </p>
+                </div>
+            </div>
+
+            <div class="home-image">
+                <img src="{{ asset('images/img5.jpg') }}" alt="Descriptive alt text">
+                <a href="#" class="donate-link">Donate Now!</a>
+            </div>
+
         </main>
 
     <script src="{{ asset('js/home.js') }}"></script>     

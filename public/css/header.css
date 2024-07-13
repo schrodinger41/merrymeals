@@ -5,7 +5,6 @@
     align-items: center;
     background-color: var(--primary-color);
     padding: 10px 20px;
-    border-bottom: 1px solid #ddd;
 }
 
 .container_header {
