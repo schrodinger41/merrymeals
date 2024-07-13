@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Meals on Wheels</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -34,7 +34,7 @@
             <div class="mySlides fade">
                 <div class="numbertext">1 / 4</div>
                 <img src="{{ asset('images/img2.jpg') }}">
-                <div class="text">Caption Text</div>
+                <div class="text">Seniors Test</div>
             </div>
         
             <div class="mySlides fade">
@@ -73,5 +73,9 @@
     <script src="{{ asset('js/home.js') }}"></script>     
     </body>
     @endsection
+
+
+
+
 </html>
 
