@@ -24,7 +24,7 @@
    }
 
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
     $(document).ready(function(){
@@ -186,7 +186,7 @@
                   <div class="row mb-4">
                         <label for="role" class="col-sm-4 col-form-label">Register as: </label>
                         <div class="col-sm-8">
-                        <select class="form-select form-select-lg" name="role" required>
+                        <select class="form-select form-select" name="role" required>
                             <option value="">Please select</option>
                             <option value="member">Member</option>
                             <option value="partner">Partner</option>
