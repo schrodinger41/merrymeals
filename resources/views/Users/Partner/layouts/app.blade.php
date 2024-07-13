@@ -16,11 +16,15 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    <script defer src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
     <!-- Styles -->
     <link href="{{ asset('css/header.css') }}" rel="stylesheet">    
+    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">   
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">     
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">  
-
 </head>
 <body >
     <header class="header">
@@ -40,12 +44,10 @@
                 <div class="user-avatar list-item">
                     <img src="{{ asset('images/user-icon.png') }}" alt="User Avatar">
                 </div>
-                
-                <div class="user-name">{{ Auth()->user()->name }}</div>
-
+              
                 @if (Route::has('login'))
                     <div class="dropdowns">
-                        <button class="dropdown-toggles">▼</button>
+                        <button class="dropdown-toggles"><div class="user-name">{{ Auth()->user()->name }}▼</button>
                         <div class="dropdown-menus">
                             <li><a class="dropdown-item" href="{{ route('partner#updateProfile', Auth()->user()->id) }}">Update </a></li>
                             <li><a class="dropdown-item" href="{{ route('order#AllOrderForPartner', Auth()->user()->id) }}">Orders </a></li>
@@ -62,6 +64,34 @@
             </div>
         </div>
     </header>
+
+    
+<!-- Content -->
+@yield('content')
+<!-- End Content -->
+
+     <!-- Start footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="{{ route('partner#index') }}">Home</a>
+            <a href="{{ route('register') }}">Join Us</a>
+            <a href="{{ route('register') }}">Partner With Us</a>
+        </div>
+        <div class="footer-logo">
+            <img src="{{ asset('images/logo.png') }}" alt="Logo">
+        </div>
+        <div class="footer-social">
+            <a href="#"><box-icon class="social-link" type='logo' name='facebook-circle' size='50px'></box-icon></a>
+            <a href="#"><box-icon class="social-link" name='instagram-alt' type='logo' size='50px'></box-icon></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy;2024 Meals on Wheels
+    </div>
+</footer>
+<!-- END footer -->
+
 
 
 

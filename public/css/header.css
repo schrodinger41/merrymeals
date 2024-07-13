@@ -34,7 +34,7 @@
 }
 
 .user-name {
-    margin-right: 10px;
+    padding-right: 5px;
     font-weight: 900;
     font-size: var(--h3-font-size);
 }

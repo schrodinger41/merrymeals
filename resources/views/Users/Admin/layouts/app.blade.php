@@ -1,200 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-  <head>
-    <!-- Required meta tags -->
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>
         @yield('title')
     </title>
 
-    <!------------CSS-------------->
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('main/css/style.css')}}"> --}}
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-    <!-- Bootstrap CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-      <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
-
-	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'> -->
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" type="text/css" href="{{ url('/css/animate.css') }}" >
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" type="text/css" href="{{ url('/css/icomoon.css') }}">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" type="text/css" href="{{ url('/css/bootstrap.css') }}">
-	<!-- Superfish -->
-	<link rel="stylesheet" type="text/css" href="{{ url('/css/superfish.css') }}">
-
-	<link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}">
+    <script defer src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-  </head>
-<body style="min-height: 100vh;
-display: flex;
-flex-direction: column;">
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-
-
-<!-- Start nav -->
-<div class="header-top">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-6 text-left fh5co-link">
-                <a href="/contact">Contact</a>
-                <a href="/terms">Terms and Conditions</a>
-            </div>
-            <div class="col-md-6 col-sm-6 text-right fh5co-social">
-                <a href="#" class="grow"><i class="icon-facebook2"></i></a>
-                <a href="#" class="grow"><i class="icon-twitter2"></i></a>
-                <a href="#" class="grow"><i class="icon-instagram2"></i></a>
-            </div>
-        </div>
-    </div>
-</div>
-<header id="fh5co-header-section" class="sticky-banner">
-    <div class="container">
-        <div class="nav-header">
-            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-            <div id="fh5co-logo"><a href="/" ><img src="{{ url('/images/company_logo.png') }}" alt="company logo"></a></div>
-            <!-- START #fh5co-menu-wrap -->
-           <!--Start end if -->
-       
-            <nav id="fh5co-menu-wrap" role="navigation">
-                    <ul class="sf-menu" id="fh5co-primary-menu">
-                        <li class="active">
-                            <a href="{{ route('admin#index') }}">Home</a>
-                        </li>
-                        <li>
-                          <a href="#" class="fh5co-sub-ddown">Manage Users</a>
-                          <ul class="fh5co-sub-menu">
-                              <li><a href="{{ route('admin#allMembers') }}">Member and Care Giver</a></li>
-                              <li><a href="{{ route('admin#allPartners') }}">Partners</a></li>
-                              <li><a href="{{ route('admin#allVolunteers') }}">Volunteers</a></li>
-                              <li><a href="{{ route('admin#allDonors') }}">Donors</a></li>
-                          </ul>
-                      </li>
-
-                      <li><a href="{{ route('admin#allMenus') }}">Manage Menus</a></li>
-                        <li><a href="{{ route('admin#allDeliveries') }}">Manage Deliveries</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        
-                          <button type="button" class="btn btn-blue dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" 
-                          style="
-                                padding: 12px 16px;">
-                              {{ Auth()->user()->name }}
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                              <li>
-                                <a class="dropdown-item" href="{{ route('admin#updateAdmin', Auth()->user()->id) }}">
-                                    <button class="btn pt-0 pb-1 px-0 nav-link text-dark" style="button:focus { outline: none; }" >
-                                        Update 
-                                    </button>
-                                </a></li>
-                              <li>
-                                  <a class="dropdown-item" href="#">
-                                      <form action="{{ route('logout') }}" method="post">
-                                          @csrf
-                                          <button type="submit" class="btn pt-0 pb-1 px-0 nav-link text-dark" style="button:focus { outline: none; }" >  <i class="fas fa-sign-out-alt" ></i> Logout </button>
-                                      </form>
-                                  </a>
-                              </li>
-                          </ul>
-                      
-                      
-                  
-                    </ul>
-
-                     
-                    
-                 
+    <!-- Styles -->
+    <link href="{{ asset('css/header.css') }}" rel="stylesheet">    
+    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">   
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">     
+    <link href="{{ asset('css/home.css') }}" rel="stylesheet">  
+</head>
+<body>
+    <!-- Start nav -->
+    <header class="header">
+        <div class="container_header">
+            <div class="logo">
+                <a  href="/"    >
+                    <img src="{{ asset('images/logo.png') }}" alt="Meals on Wheels Logo">
+                </a>
                 
-            </nav>
-          
-        </div>
-    </div>
-</header>
-
-
-<!-- END nav -->
-
-<!-- Content -->
-
-    @yield('content')
-
-<!-- End Content -->
-
-<footer style="margin-top: auto;">
-    <div id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center">
-                    <p class="fh5co-social-icons">
-                        <a href="#"><i class="icon-twitter2"></i></a>
-                        <a href="#"><i class="icon-facebook2"></i></a>
-                        <a href="#"><i class="icon-instagram"></i></a>
-                        <a href="#"><i class="icon-dribbble2"></i></a>
-                        <a href="#"><i class="icon-youtube"></i></a>
-                    </p>
-                    <p>Copyright 2022 MerryMeal ~ Meals on Wheels <a href="#">Charity</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Group 1 DEA Team</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+            </div>
+            
+            <div class="user-info">
+                <li class="list-item"><a href="{{ route('admin#index') }}">Home</a></li>
+                <div class="dropdowns">
+                    <button class="dropdown-toggles">Manage Users▼</button>
+                    <div class="dropdown-menus">
+                        <a href="{{ route('admin#allMembers') }}">Member and Care Giver</a>
+                        <a href="{{ route('admin#allPartners') }}">Partners</a>
+                        <a href="{{ route('admin#allVolunteers') }}">Volunteers</a>
+                        <a href="{{ route('admin#allDonors') }}">Donors</a>
+                    </div>
                 </div>
+                <li class="list-item">><a href="{{ route('admin#allMenus') }}">Manage Menus</a></li>
+                <li class="list-item">><a href="{{ route('admin#allDeliveries') }}">Manage Deliveries</a></li>
+                <li class="list-item"><a href="/about">About</a></li>
+                <li class="list-item"><a href="/contact">Contact</a></li>
+                <div class="user-avatar list-item">
+                    <img src="{{ asset('images/user-icon.png') }}" alt="User Avatar">
+                </div>
+                
+                @if (Route::has('login'))
+                    <div class="dropdowns">
+                        <button class="dropdown-toggles"><div class="user-name">{{ Auth()->user()->name }}▼</button>
+                        <div class="dropdown-menus">
+                            @auth
+                                <a href="{{ url('/dashboard') }}">Dashboard</a>
+                    
+                            @else
+                                <a href="{{ route('login') }}">Log in</a>
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}">Register</a>
+                                @endif
+                            @endauth
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
+    </header>
+    <!-- END nav -->
+
+    <!-- Content -->
+    @yield('content')
+    <!-- End Content -->
+
+    <!-- Start footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="{{ route('register') }}">Join Us</a>
+            <a href="{{ route('register') }}">Partner With Us</a>
+        </div>
+        <div class="footer-logo">
+            <img src="{{ asset('images/logo.png') }}" alt="Logo">
+        </div>
+        <div class="footer-social">
+            <a href="#"><box-icon class="social-link" type='logo' name='facebook-circle' size='50px'></box-icon></a>
+            <a href="#"><box-icon class="social-link" name='instagram-alt' type='logo' size='50px'></box-icon></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy;2024 Meals on Wheels
     </div>
 </footer>
-
-
-</div>
-<!-- END fh5co-page -->
-
-</div>
-<!-- END fh5co-wrapper -->
-
-<!-- jQuery -->
-
-<script src="js/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="js/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="js/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/sticky.js"></script>
-
-<!-- Stellar -->
-<script src="js/jquery.stellar.min.js"></script>
-<!-- Superfish -->
-<script src="js/hoverIntent.js"></script>
-<script src="js/superfish.js"></script>
-
-<!-- Main JS -->
-<script src="js/main.js"></script>
-
-  <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-
+<!-- END footer -->
 </body>
 </html>
-
