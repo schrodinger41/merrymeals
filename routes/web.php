@@ -28,6 +28,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/menu-listing', function () {
+        return view('menu-listing');
+    })->name('menu-listing');
 });
 
 
