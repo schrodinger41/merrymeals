@@ -19,7 +19,7 @@
         <header class="header">
             <div class="container">
                 <div class="logo">
-                    <img src="path/to/logo.png" alt="MerryMeals Logo">
+                    <img src="{{ asset('images/logo.png') }}" alt="Meals on Wheels Logo">
                 </div>
                 <div class="user-info">
                     <div class="user-avatar">
