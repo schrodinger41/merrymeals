@@ -12,12 +12,8 @@
 
 
         <!-- CSS -->
-<<<<<<< HEAD
         <link href="{{ asset('css/home.css') }}" rel="stylesheet">  
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">      
-=======
-        <link href="{{ asset('css/home.css') }}">       
->>>>>>> 329980f477dac1dc4ae0a67e78f8b4ec137b1bc2
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">        
     </head>
     <body>     
         <header class="header">
