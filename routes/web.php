@@ -37,6 +37,9 @@ Route::middleware([
     Route::get('/member-profile', function () {
         return view('member-profile');
     })->name('member-profile');
+    Route::get('/partners-profile', function () {
+        return view('partners-profile');
+    })->name('partners-profile');
 });
 
 

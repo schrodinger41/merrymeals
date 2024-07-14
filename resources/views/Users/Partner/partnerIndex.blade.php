@@ -114,16 +114,16 @@
                                 </div>
                                         
                             </div>
-                                    
-                            <div class="modal-footer">
-                                <div class="d-flex justify-content-start">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="margin-right: 24vw">Cancel</button>
-                                    <button type="submit" value="Create" class="btn btn-outline-dark">Save</button>
-                                </div>
-                            </div>
+
+                            <div class="d-flex justify-content-center pb-2">
+                                <button type="submit" value="Create" class="btn btn-outline-dark">Add</button>
+							</div>
                         </form>
                         
-                    
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+
 					</div>
 				</div>
             </div>
