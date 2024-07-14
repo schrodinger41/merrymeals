@@ -5,9 +5,6 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.bunny.net">
-<link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 <!-- CSS -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -105,8 +102,8 @@
             </div>
         @endif
 
-        <div class="form-container" style="margin-top: 90px;">
-            <img src="{{ asset('images/donation.png') }}" alt="Image for Donation Form">
+        <div class="form-container" style="margin-top: 140px;">
+            <img src="{{ asset('images/donation.png')}}" alt="Image for Donation Form">
             <div class="title-text">
                 <div class="title">Donation Form</div>
                 <p>Thank you for donating to our charity</p>

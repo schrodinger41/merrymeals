@@ -60,7 +60,7 @@
             </div>
         </section>
 
-        <section class="team">
+        <section class="team" style="margin-bottom: 180px;">
             <h2>Meet Our Team</h2>
             <div class="team-members">
                 <div class="team-member">
