@@ -33,7 +33,7 @@
 		    </div>
 
             <!-- MENU -->
-            <div class="row" style="gap: 30px;">
+            <div class="row" style="gap: 40px;">
             @foreach ($menuData as $menu)
                 <div class="card mb-2 mt-2" style="width: 335px; background-color: var(--primary-color); color: white; border: 2px #344d3b solid; border-radius: 40px;">
                     <img class="card-img-top mt-3" src="{{ asset('uploads/meal/' . $menu->menu_image) }}" style="width: 100%; height: 300px; border-radius: 40px; padding-bottom: 10px;">
