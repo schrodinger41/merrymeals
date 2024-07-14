@@ -19,9 +19,11 @@ Route::get('/contact', function () {
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/donate', function () {
-    return view('donate');
-});
+Route::get('/donation/donate', 
+ [DonationController::class, 'showForm'])->name('donate');
+Route::post('/donation/donate', 
+ [DonationController::class, 'processDonation'])->name('processDonation');
+
 
 Route::middleware([
     'auth:sanctum',
@@ -129,7 +131,3 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/partnerUpdated/{id}', [AdminController::class, 'saveUpdateP'])->name('admin#partnerUpdated');
     Route::post('/volunteerUpdated/{id}', [AdminController::class, 'saveUpdateV'])->name('admin#volunteerUpdated');
 });
-
-
-
-

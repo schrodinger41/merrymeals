@@ -1,10 +1,32 @@
-<form>
-    <fieldset>
-      <legend>Donation Form:</legend>
-      <label for="fname">First name:</label><br>
-      <input type="text" id="fname" name="fname" value="John"><br>
-      <label for="lname">Last name:</label><br>
-      <input type="text" id="lname" name="lname" value="Doe"><br><br>
-      <input type="submit" value="Submit">
-    </fieldset>
-  </form>
+@section('title')
+    Donation Form
+@endsection
+
+@extends('layouts.app')
+
+<body>
+    @section('content')
+        @if (session('success'))
+            <div>
+                {{ session('success') }}
+            </div>
+        @endif
+
+        <form action="{{ route('processDonation') }}" method="POST">
+            @csrf
+            <div>
+                <label for="amount">Donation Amount:</label>
+                <input type="number" name="amount" id="amount" required>
+            </div>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <button type="submit">Donate</button>
+        </form>
+    @endsection
+</body>
