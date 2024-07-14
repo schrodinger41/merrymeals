@@ -20,7 +20,7 @@
     @section('content')
     <main>
 
-        <section class="contact">
+        <section class="contact" style="margin-top: 82px;>
             <div class="container">
                 <h2>Contact Us</h2>
                 <p>If you have any questions or would like to get involved, please feel free to reach out to us.</p>
