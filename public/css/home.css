@@ -3,11 +3,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    min-height: 100vh !important;
 }
 
 /* IMAGE SLIDESHOW SECTION */
 .slideshow-container {
+    margin-top: 82px !important;
     max-width: 100%;
     height: 70vh;
     position: relative;

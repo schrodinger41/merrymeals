@@ -34,16 +34,17 @@
         });
     </script>
 </head>
-<body>
-    @section('title')
+@section('title')
     Register
     @endsection
 
     @extends('layouts.app')
     @section('content')
+<body>
+    
 
    
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin-top: 82px;">
         <div class="row" style="display: flex;">
             <div class="col col-sm-8" id="form">
                 <h2>Register With Us!</h2>
@@ -257,6 +258,7 @@
             </div>
         </div>
     </div>
-    @endsection
+
 </body>
+@endsection
 </html>

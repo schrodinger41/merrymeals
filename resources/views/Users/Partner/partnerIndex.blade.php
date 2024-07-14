@@ -24,7 +24,7 @@
     @extends('Users.Partner.layouts.app')
     
     @section('content')
-        <div class="container">
+        <div class="container" style="margin-top: 110px;">
             <div class="row p-3 mt-3 mb-5">
 			    <div class="col-12 text-center">
 					<h3 style="font-weight: var(--weight-700);"> <span style="color: var(--primary-color);"> MEALS </span> FOR THIS <span style="color: var(--primary-color);"> WEEK! </span> </h3>
@@ -33,7 +33,7 @@
 		    </div>
 
             <!-- MENU -->
-            <div class="row" style="gap: 40px;">
+            <div class="row" style="gap: 40px; min-height: 50vh;">
             @foreach ($menuData as $menu)
                 <div class="card mb-2 mt-2" style="width: 335px; background-color: var(--primary-color); color: white; border: 2px #344d3b solid; border-radius: 40px;">
                     <img class="card-img-top mt-3" src="{{ asset('uploads/meal/' . $menu->menu_image) }}" style="width: 100%; height: 300px; border-radius: 40px; padding-bottom: 10px;">

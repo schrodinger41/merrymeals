@@ -24,7 +24,7 @@
     @extends('Users.Partner.layouts.app')
     
     @section('content')
-        <div class="container">
+        <div class="container" >
             <div class="row p-3 mt-3 mb-5">
 			    <div class="col-12 text-center">
 					<h3 style="font-weight: var(--weight-700);"> <span style="color: var(--primary-color);"> MEALS </span> FOR THIS <span style="color: var(--primary-color);"> WEEK! </span> </h3>
