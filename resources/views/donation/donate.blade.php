@@ -66,7 +66,7 @@
                 width: 30%;
                 /* Adjust width as needed */
                 padding: 10px 20px;
-                background-color: #28a745;
+                background-color: var(--secondary-color);
                 color: white;
                 border: none;
                 border-radius: 30px;
@@ -75,7 +75,7 @@
             }
 
             .form-container button:hover {
-                background-color: #218838;
+                background-color: var(--primary-color);
             }
 
             .success-message {
