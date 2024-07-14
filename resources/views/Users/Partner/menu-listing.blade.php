@@ -21,7 +21,7 @@
         THIS WEEK'S MENU!
     @endsection
 
-    @extends('layouts.app')
+    @extends('Users.Partner.layouts.app')
     
     @section('content')
         <div class="container">

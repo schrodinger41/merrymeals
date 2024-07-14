@@ -4,7 +4,7 @@
     Register
     @endsection
 
-    @extends('layouts.app')
+    @extends('Users.Partner.layouts.app')
     @section('content')
 <head>
     <style type="text/css">
