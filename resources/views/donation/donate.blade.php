@@ -105,7 +105,7 @@
             </div>
         @endif
 
-        <div class="form-container">
+        <div class="form-container" style="margin-top: 90px;">
             <img src="{{ asset('images/donation.png') }}" alt="Image for Donation Form">
             <div class="title-text">
                 <div class="title">Donation Form</div>

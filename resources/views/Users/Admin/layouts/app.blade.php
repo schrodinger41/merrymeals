@@ -31,7 +31,7 @@
     <header class="header">
         <div class="container_header">
             <div class="logo">
-                <a  href="/"    >
+                <a  href="{{ route('admin#index') }}"    >
                     <img src="{{ asset('images/logo.png') }}" alt="Meals on Wheels Logo">
                 </a>
                 
