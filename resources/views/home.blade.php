@@ -8,11 +8,6 @@
 
     <title>Meals on Wheels</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-
     <!-- CSS -->
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -94,13 +89,40 @@
                 <a href="{{ route('donate') }}" class="donate-link">Donate Now!</a>
             </div>
 
+            <div class="volunteer-section">
+                <h2 class="volunteer-title">Our Volunteers</h2>
+                <p class="volunteer-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Quam nulla porttitor massa id neque aliquam vestibulum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Quam nulla porttitor massa id neque aliquam vestibulum.
+                </p>
+                <div class="volunteer-testimonials">
+                    <div class="volunteer-testimonial">
+                        <img src="{{ asset('images/img6.jpg') }}" alt="Volunteer 1">
+                        <blockquote>“meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow 
+                            meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow ”</blockquote>
+                        <p class="volunteer-name">Luna Moon, CAT Co.</p>
+                    </div>
+                    <div class="volunteer-testimonial">
+                        <img src="{{ asset('images/img7.jpg') }}" alt="Volunteer 2">
+                        <blockquote>“meow meow meow”</blockquote>
+                        <p class="volunteer-name">Noodle Soup, CAT Co.</p>
+                    </div>
+                    <div class="volunteer-testimonial">
+                        <img src="{{ asset('images/img8.jpg') }}" alt="Volunteer 3">
+                        <blockquote>“bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw 
+                            bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw ”</blockquote>
+                        <p class="volunteer-name">Cara Girl, DOG Co.</p>
+                    </div>
+                </div>
+            </div>
+
         </main>
 
         <script src="{{ asset('js/home.js') }}"></script>
-    </body>
-@endsection
 
+    @endsection
 
-
+</body>
 
 </html>

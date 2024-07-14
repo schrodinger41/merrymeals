@@ -136,6 +136,8 @@ body {
     margin-top: 0.5rem;
 }
 
+
+/* DONATE IMAGE SECTION */
 .home-image {
     position: relative;
     height: 70vh;
@@ -173,4 +175,66 @@ body {
 .donate-link:hover {
     font-size: var(--big-font-size);
     font-weight: bold;
+}
+
+
+/* VOLUNTEERS SECTION*/
+.volunteer-section {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 120px 0;
+  height: 90vh;
+}
+
+.volunteer-title {
+  margin-bottom: 30px;
+  color: var(--secondary-color);
+  font-size: var(--h1-font-size);
+  font-weight: var(--weight-700);
+}
+
+.volunteer-description {
+  margin-bottom: 100px;
+  font-size: var(--h3-font-size);
+}
+
+.volunteer-testimonials {
+  display: flex;
+  justify-content: space-between;
+}
+
+.volunteer-testimonial {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 30%;
+  position: relative;
+  padding-top: 60px; /* Space for the image */
+}
+
+.volunteer-testimonial img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: -60px; /* Half of the image height to center it */
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid #fff; /* Optional: adds a border to the image */
+}
+
+.volunteer-testimonial blockquote {
+  font-style: italic;
+  color: #555;
+  margin-top: 30px; /* Space between image and text */
+  line-height: 2;
+}
+
+.volunteer-name {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
 }
