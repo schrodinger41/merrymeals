@@ -108,7 +108,7 @@
 									style="width: inherit;" />
 								</div>
 							</form>
-									<!-- Car Post Form -->
+									
 						</div>
 								
                         <div class="modal-footer">
