@@ -67,7 +67,7 @@
     align-self: flex-end;
 }
 
-.order-button {
+.update-button {
     font-weight: 900;
     font-family: var(--main-font);
     background-color: var(--accent-color);
@@ -79,7 +79,7 @@
     transition: background-color 0.3s ease;
 }
 
-.order-button:hover {
+.update-button:hover {
     background-color: var(--primary-color);
     color: white;
 }
