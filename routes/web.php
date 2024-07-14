@@ -10,6 +10,8 @@ use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\VolunteerController;
 
+
+
 Route::get('/', function () {
     return view('home');
 });
@@ -19,9 +21,7 @@ Route::get('/contact', function () {
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/donate', function () {
-    return view('donate');
-});
+
 
 Route::middleware([
     'auth:sanctum',
@@ -135,4 +135,8 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 
-
+//Donors
+Route::group(['prefix' => 'donor'], function () {
+    Route::get('/donation/donate', [DonationController::class, 'showForm'])->name('donate');
+    Route::post('/donation/donate', [DonationController::class, 'processDonation'])->name('processDonation'); 
+});
