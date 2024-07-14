@@ -34,7 +34,7 @@
 		    </div>
 
 <!-- MENU -->
-<div class="container">
+<div class="container" >
     <div class="row">
         @foreach ($menuData as $menu)
             <div class="col-md-4 d-flex justify-content-center mb-4">
