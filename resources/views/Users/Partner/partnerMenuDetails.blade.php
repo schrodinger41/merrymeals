@@ -26,7 +26,7 @@ THIS WEEK'S MENU!
                 <p class="food-description">{{ $viewMenu->menu_description }}</p>
                 <div class="button-container">
                   <a href="{{ route('partner#deleteMenu', $viewMenu->id) }}"><button type="submit" value="Delete" class="delete-button">Delete</button></a>
-                  <button class="update-button">Update</button>
+                  <a href="{{ route('partner#updateMenu', $viewMenu->id) }}"><button type="submit" value="Update" class="update-button">Update</button></a>
               </div>
             </div>
         </div>
