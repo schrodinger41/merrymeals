@@ -19,6 +19,9 @@ Route::get('/contact', function () {
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('/donate', function () {
+    return view('donate');
+});
 
 Route::middleware([
     'auth:sanctum',

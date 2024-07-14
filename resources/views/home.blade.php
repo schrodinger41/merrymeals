@@ -93,7 +93,7 @@
 
             <div class="home-image">
                 <img src="{{ asset('images/img5.jpg') }}" alt="Descriptive alt text">
-                <a href="#" class="donate-link">Donate Now!</a>
+                <a href="/donate" class="donate-link">Donate Now!</a>
             </div>
 
         </main>
