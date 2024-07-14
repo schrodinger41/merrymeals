@@ -34,6 +34,9 @@ Route::middleware([
     Route::get('/menu-listing', function () {
         return view('menu-listing');
     })->name('menu-listing');
+    Route::get('/member-profile', function () {
+        return view('member-profile');
+    })->name('member-profile');
 });
 
 

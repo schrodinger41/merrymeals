@@ -10,14 +10,13 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     <!-- CSS -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Menu</title>
 </head>
-<body>
+<body style="overflow-x: hidden;">
     @section('title')
         THIS WEEK'S MENU!
     @endsection
@@ -33,15 +32,11 @@
 			    </div>
 		    </div>
 
-<!-- MENU -->
-<div class="container">
-    <div class="row">
-        @foreach ($menuData as $menu)
-            <div class="col-md-4 d-flex justify-content-center mb-4">
-                <div class="card" style="width: 335px; background-color: var(--primary-color); color: white; border: 2px #344d3b solid; border-radius: 40px;">
-                    <div class="d-flex justify-content-center mt-3">
-                        <img class="card-img-top" src="{{ asset('uploads/meal/' . $menu->menu_image) }}" style="width: 300px; height: 200px; border-radius: 40px; padding-bottom: 10px;">
-                    </div>
+            <!-- MENU -->
+            <div class="row" style="gap: 30px;">
+            @foreach ($menuData as $menu)
+                <div class="card mb-2 mt-2" style="width: 335px; background-color: var(--primary-color); color: white; border: 2px #344d3b solid; border-radius: 40px;">
+                    <img class="card-img-top mt-3" src="{{ asset('uploads/meal/' . $menu->menu_image) }}" style="width: 100%; height: 300px; border-radius: 40px; padding-bottom: 10px;">
                     <hr style="color: white;">
                     <div class="card-body">
                         <h4 class="card-title">{{ $menu->menu_title }}</h4>
@@ -51,14 +46,10 @@
                         </div>
                     </div>
                 </div>
+            @endforeach
             </div>
-        @endforeach
-    </div>
-</div>
 
-
-        
-        <!-- MODAL -->
+            <!-- MODAL -->
 		    <div class="modal fade" id="exampleModal" tabindex="-1"
 			aria-labelledby="exampleModalLabel" aria-hidden="true"
 			role="dialog">
