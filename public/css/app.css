@@ -20,6 +20,7 @@
     --h1-font-size: 50px;
     --h2-font-size: 29px;
     --h3-font-size: 24px;
+    --h4-font-size: 18px;
 
     --fs-22: 2.2rem;
 
@@ -59,6 +60,9 @@ img {
 .flex {
     display: flex;
     align-items: center;
+}
+li {
+    list-style: none;
 }
 
 @media (max-width: 768px) {

@@ -16,8 +16,13 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    <script defer src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
     <!-- Styles -->
     <link href="{{ asset('css/header.css') }}" rel="stylesheet">    
+    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">   
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">     
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">  
 </head>
@@ -31,17 +36,21 @@
                 </a>
                 
             </div>
+            
             <div class="user-info">
-                <div class="user-avatar">
-                    <img src="{{ asset('path/to/user-avatar.png') }}" alt="User Avatar">
-                </div>
+                <li class="list-item"><a href="/">Home</a></li>
+                <li class="list-item"><a href="/about">About</a></li>
+                <li class="list-item"><a href="/contact">Contact</a></li>
+                
+                
                 <div class="user-name">Public User</div>
                 @if (Route::has('login'))
                     <div class="dropdowns">
                         <button class="dropdown-toggles">▼</button>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menus">
                             @auth
                                 <a href="{{ url('/dashboard') }}">Dashboard</a>
+                    
                             @else
                                 <a href="{{ route('login') }}">Log in</a>
                                 @if (Route::has('register'))
@@ -61,9 +70,25 @@
     <!-- End Content -->
 
     <!-- Start footer -->
-    <footer>
-        ©2024 Meals on Wheels
-    </footer> 
-    <!-- END footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="{{ route('register') }}">Join Us</a>
+            <a href="{{ route('register') }}">Partner With Us</a>
+        </div>
+        <div class="footer-logo">
+            <img src="{{ asset('images/logo.png') }}" alt="Logo">
+        </div>
+        <div class="footer-social">
+            <a href="#"><box-icon class="social-link" type='logo' name='facebook-circle' size='50px'></box-icon></a>
+            <a href="#"><box-icon class="social-link" name='instagram-alt' type='logo' size='50px'></box-icon></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy;2024 Meals on Wheels
+    </div>
+</footer>
+<!-- END footer -->
 </body>
 </html>
