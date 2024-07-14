@@ -40,19 +40,20 @@
             </div>
 
             <div class="user-info">
+                @if (Route::has('login'))
+                @auth
+                <li class="list-item"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+                @else
                 <li class="list-item"><a href="/">Home</a></li>
                 <li class="list-item"><a href="/about">About</a></li>
                 <li class="list-item"><a href="/contact">Contact</a></li>
-
-
                 <div class="user-name">Public User</div>
-                @if (Route::has('login'))
+                
                     <div class="dropdowns">
                         <button class="dropdown-toggles">▼</button>
                         <div class="dropdown-menus">
-                            @auth
-                                <a href="{{ url('/dashboard') }}">Dashboard</a>
-                            @else
+                           
+                           
                                 <a href="{{ route('login') }}">Log in</a>
                                 @if (Route::has('register'))
                                     <a href="{{ route('register') }}">Register</a>

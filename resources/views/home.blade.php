@@ -32,10 +32,7 @@
             <div class="slideshow-container">
 
                 <!-- Full-width images with number and caption text -->
-                <div class="mySlides fade">
-                    <div class="numbertext">1 / 4</div>
-                    <img src="{{ asset('images/img2.jpg') }}">
-                    <div class="text">Seniors Test</div>
+                <div class="mySlides fade">               
                     <img src="{{ asset('images/img1.jpg') }}">
                     <div class="text">Provide <span style="color: var(--secondary-color);">Healthy</span> Meals</div>
                 </div>
