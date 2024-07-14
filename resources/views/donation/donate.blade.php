@@ -1,8 +1,6 @@
-@section('title')
-    Donation Form
-@endsection
-
 @extends('layouts.app')
+
+@section('title', 'Donation Form')
 
 <body>
     @section('content')

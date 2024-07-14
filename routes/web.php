@@ -10,6 +10,8 @@ use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\VolunteerController;
 
+
+
 Route::get('/', function () {
     return view('home');
 });
@@ -19,10 +21,6 @@ Route::get('/contact', function () {
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/donation/donate', 
- [DonationController::class, 'showForm'])->name('donate');
-Route::post('/donation/donate', 
- [DonationController::class, 'processDonation'])->name('processDonation');
 
 
 Route::middleware([
@@ -130,4 +128,12 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/memberUpdated/{id}', [AdminController::class, 'saveUpdateM'])->name('admin#memberUpdated');
     Route::post('/partnerUpdated/{id}', [AdminController::class, 'saveUpdateP'])->name('admin#partnerUpdated');
     Route::post('/volunteerUpdated/{id}', [AdminController::class, 'saveUpdateV'])->name('admin#volunteerUpdated');
+});
+
+
+
+//Donors
+Route::group(['prefix' => 'donor'], function () {
+    Route::get('/donation/donate', [DonationController::class, 'showForm'])->name('donate');
+    Route::post('/donation/donate', [DonationController::class, 'processDonation'])->name('processDonation'); 
 });
