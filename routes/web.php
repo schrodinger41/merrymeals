@@ -40,6 +40,10 @@ Route::middleware([
     Route::get('/partners-profile', function () {
         return view('partners-profile');
     })->name('partners-profile');
+    Route::get('/members-reciept', function () {
+        return view('members-reciept');
+    })->name('members-reciept');
+
 });
 
 
