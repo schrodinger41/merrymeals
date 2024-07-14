@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  @section('title')
-    Register
-    @endsection
-
-    @extends('Users.Partner.layouts.app')
-    @section('content')
+ 
 <head>
     <style type="text/css">
         #form {
@@ -40,7 +35,12 @@
     </script>
 </head>
 <body>
-    
+    @section('title')
+    Register
+    @endsection
+
+    @extends('layouts.app')
+    @section('content')
 
    
     <div class="container-fluid">
