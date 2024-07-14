@@ -19,7 +19,7 @@
 
     @section('content')
     <main>
-        <section class="about-header">
+        <section class="about-header" style="margin-top: 82px;">
             <div class="about-text">
                 <h1>About <span>Us</span></h1>
                 <p>Meals on Wheels is a charitable organization committed to delivering nutritious meals to elderly and individuals in need. Our services aim to improve health and wellbeing through dedicated support and care.</p>
