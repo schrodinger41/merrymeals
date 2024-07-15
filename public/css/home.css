@@ -145,9 +145,7 @@ body {
 /* DONATE IMAGE SECTION */
 .home-image {
     position: relative;
-    height: 70vh;
-    margin-top: 2rem;
-    background-color: #ccc;
+    margin-top: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -279,6 +277,10 @@ body {
         font-size: var(--h2-font-size);
         font-weight: bolder;
         text-decoration: underline;
+    }
+
+    .volunteer-section {
+        padding-top: 50px;
     }
 
     .volunteer-testimonials {
