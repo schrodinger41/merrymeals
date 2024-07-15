@@ -173,12 +173,12 @@
                               @endif</div>
                         </div>
                         <hr>
-                        <div class="row pb-3 pt-1">
+                        <div class="row pb-3 pt-3">
                           <div class="col-4" style="font-weight: 900">VOLUNTEER DURATION:</div>
                           <div class="col-8">{{ $volunteerData-> volunteer_duration }}</div>
                         </div>
                         <hr>
-                        <div class="row pb-3 pt-1">
+                        <div class="row pb-3 pt-3">
                           <div class="col-4" style="font-weight: 900">AVAILABLE DAYS:</div>
                           <div class="col-8">{{ $volunteerData-> volunteer_available  }}</div>
                         </div>
