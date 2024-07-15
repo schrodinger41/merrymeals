@@ -89,7 +89,7 @@
                 <a href="{{ route('donate') }}" class="donate-link">Donate Now!</a>
             </div>
 
-            <div class="volunteer-section" style="margin-bottom: 330px;">
+            <div class="volunteer-section">
                 <h2 class="volunteer-title">Our Volunteers</h2>
                 <p class="volunteer-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Quam nulla porttitor massa id neque aliquam vestibulum.
