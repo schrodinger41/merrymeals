@@ -25,7 +25,7 @@
             <img src="{{ asset('images/member_home_img.jpg') }}" class="background-image">
             <div class="content">
                 <h1><span>Nourish</span> Your <span>Day</span> with <span>Our Meals</span></h1>
-                <a href="{{ route('donate') }}" class="button">View Menu</a>
+                <a href="#" class="button">View Menu</a>
             </div>
         </div>
     @endsection
