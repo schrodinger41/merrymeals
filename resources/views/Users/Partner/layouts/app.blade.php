@@ -46,7 +46,7 @@
                     <div class="dropdowns">
                         <button class="dropdown-toggles"><div class="user-name">{{ Auth()->user()->name }}▼</button>
                         <div class="dropdown-menus">
-                            <li><a href="{{ route('partner#updateProfile', Auth()->user()->id) }}">Update </a></li>
+                            <li><a href="{{ route('partner#updateProfile', Auth()->user()->id) }}">Profile </a></li>
                             <li><a href="{{ route('order#AllOrderForPartner', Auth()->user()->id) }}">Orders </a></li>
                             <li>
                             <form action="{{ route('logout') }}" method="post">
@@ -72,7 +72,6 @@
     <div class="footer-content">
         <div class="footer-links">
             <a href="{{ route('partner#index') }}">Home</a>
-            <a href="{{ route('partner#createMenu') }}" class="list-item">Create Menu</a>
             <a href="/contact">Contact</a>
         </div>
         <div class="footer-logo">
