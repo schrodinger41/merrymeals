@@ -76,8 +76,8 @@
         <div class="footer-content">
             <div class="footer-links">
                 <a href="/">Home</a>
-                <a href="{{ route('register') }}">Join Us</a>
-                <a href="{{ route('register') }}">Partner With Us</a>
+                <a href="/ABOUT">About Us</a>
+                <a href="/contact">Contact</a>
             </div>
             <div class="footer-logo">
                 <img src="{{ asset('images/logo.png') }}" alt="Logo">
