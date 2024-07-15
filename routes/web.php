@@ -23,6 +23,19 @@ Route::get('/about', function () {
 });
 
 
+// donation can be done without registration
+Route::get('/donationFee', [DonationController::class, 'index']);
+Route::post('/saveDonationFee', [DonationController::class, 'saveDonationFee'])->name('saveDonationFee');
+Route::get('/donor', [DonationController::class, 'donor']);
+Route::post('/saveBilling', [DonationController::class, 'saveBilling'])->name('saveBilling');
+
+// stripe 
+route::get('/stripe',[DonationController::class,'stripe']);
+route::post('/stripe',[DonationController::class,'stripePost'])->name('stripe.post');
+
+// completion
+Route::get('/getCompletion', [DonationController::class, 'getCompletion'])->name('getCompletion');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -141,7 +154,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 //Donors
-Route::group(['prefix' => 'donor'], function () {
-    Route::get('/donation/donate', [DonationController::class, 'showForm'])->name('donate');
-    Route::post('/donation/donate', [DonationController::class, 'processDonation'])->name('processDonation'); 
-});
+// Route::group(['prefix' => 'donor'], function () {
+//     Route::get('/donation/donate', [DonationController::class, 'showForm'])->name('donate');
+//     Route::post('/donation/donate', [DonationController::class, 'processDonation'])->name('processDonation'); 
+// });
