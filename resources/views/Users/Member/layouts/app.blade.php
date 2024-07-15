@@ -50,7 +50,7 @@
                     <div class="dropdowns">
                         <button class="dropdown-toggles"><div class="user-name">{{ Auth()->user()->name }}▼</div></button>
                         <div class="dropdown-menus">
-                            <li><a class="dropdown-item" href="{{ route('member#updateProfile', Auth()->user()->id) }}">Update </a></li>
+                            <li><a href="{{ route('member#updateProfile', Auth()->user()->id) }}">Profile </a></li>
                             <?php 
                                 $order_id = DB::table('orders')->where('user_id',Auth()->user()->id)->value('id');
                             ?>
@@ -61,7 +61,7 @@
                             <form action="{{ route('logout') }}" method="post">
                                 @csrf
                                 <a>
-                                    <button type="submit" class="btn pt-0 pb-1 px-0 nav-link text-dark" style="button:focus { outline: none; }" >  <i class="fas fa-sign-out-alt" ></i> Logout </button>
+                                    <button type="submit"  style="color: white;" > Logout </button>
                                 </a>
                             </form>
                         </div>

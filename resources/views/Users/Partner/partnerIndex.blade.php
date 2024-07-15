@@ -63,11 +63,11 @@
             </div>
 
             <!-- MODAL -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog" style="margin-top: 82px">
                 <div class="modal-dialog">
                     <div class="modal-content" style="background-color: var(--accent-color); color: rgb(31, 31, 31);">
                         <div class="modal-header align-items-center justify-content-center">
-                            <h5 class="modal-title text-center" id="exampleModalLabel"><b>ADD MEAL</b></h5>
+                            <h5 class="modal-title text-center" id="exampleModalLabel" style="font-size: var(--h3-font-size);font-weight: 900"><b>ADD MEAL</b></h5>
                         </div>
                         <form action="{{ route('partner#saveMenu') }}" method="POST" enctype="multipart/form-data">
                             @csrf
@@ -75,14 +75,14 @@
                                 <!-- FORM -->
                                 <div class="was-validated">
                                     <div class="mb-3 mt-3">
-                                        <label for="name" class="d-flex form-label">Name:</label>
+                                        <label for="name" class="d-flex form-label" style="font-weight: 900;">Name:</label>
                                         <input type="text" class="form-control" placeholder="Enter meal name" name="menu_title" required="true" />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
     
                                     <div class="mb-3">
-                                        <label for="description" class="d-flex form-label">Description:</label>
+                                        <label for="description" class="d-flex form-label" style="font-weight: 900;">Description:</label>
                                         <input type="text" class="form-control" placeholder="Enter description" name="menu_description" required="true" />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
@@ -96,8 +96,8 @@
                                     </div> --}}
     
                                     <div class="mb-3">
-                                        <label class="d-flex form-label">Upload Photo:</label> 
-                                        <input type="file" class="form-control" name="menu_image" required="true" />
+                                        <label class="d-flex form-label" style="font-weight: 900;">Upload Photo:</label> 
+                                        <input type="file" class="form-control" name="menu_image" required="true" style="background-color: white; padding-left: 5px;" />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
@@ -111,11 +111,11 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center pb-2">
-                                <button type="submit" value="Create" class="btn btn-outline-dark">Add</button>
+                                <button type="submit" value="Create" class="btn btn-outline-dark" style="font-weight: 900;">Add</button>
                             </div>
                         </form>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="font-weight: 800;">Cancel</button>
                         </div>
                     </div>
                 </div>
