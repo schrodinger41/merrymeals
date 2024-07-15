@@ -108,19 +108,20 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    width: 80%;
-    margin: 2rem auto;
+    width: 100%;
+    padding: 2rem 10rem;
     height: 60vh;
     font-size: var(--h3-font-size);
+    background-color: #f8fff7;
 }
 
 .column {
     flex: 1;
     text-align: center;
     margin: 0 2rem;
-    background-color: var(--accent-color);
+    /* background-color: var(--accent-color);
     padding: 50px 30px;
-    border-radius: 10px;
+    border-radius: 10px; */
 }
 
 .column h2 {
@@ -145,7 +146,7 @@ body {
 /* DONATE IMAGE SECTION */
 .home-image {
     position: relative;
-    margin-top: 2.5rem;
+    /* margin-top: 2.5rem; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -250,6 +251,7 @@ body {
         flex-direction: column;
         height: auto;
         text-align: center;
+        padding: 2rem;
     }
 
     .column {
