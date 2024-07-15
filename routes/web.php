@@ -54,7 +54,7 @@ Route::middleware([
         return view('partners-profile');
     })->name('partners-profile');
     Route::get('/members-reciept', function () {
-        return view('members-reciept');
+        return view('Users/Member/members-reciept');
     })->name('members-reciept');
     Route::get('/management', function () {
         return view('management');
