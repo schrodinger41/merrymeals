@@ -38,7 +38,7 @@
             
             <div class="user-info">
                 <li class="list-item"><a href="{{ route('volunteer#index') }}">Home</a></li>
-                <li class="list-item"><a href="{{ route('volunteer#viewAllMenu') }}">Menu</a></li>
+                {{-- <li class="list-item"><a href="{{ route('volunteer#viewAllMenu') }}">Menu</a></li> --}}
                 <li class="list-item"><a href="/about">About</a></li>
                 <li class="list-item"><a href="/contact">Contact</a></li>
                 
@@ -47,14 +47,14 @@
                     <div class="dropdowns">
                         <button class="dropdown-toggles"><div class="user-name">{{ Auth()->user()->name }}▼</button>
                         <div class="dropdown-menus">
-                            <li><a class="dropdown-item" href="{{ route('member#updateProfile', Auth()->user()->id) }}">Update </a></li>
-                            <li><a class="dropdown-item" href="{{ route('deliver#AllDeliveryForVolunteer') }}">Deliveries </a></li>
+                            <li><a href="{{ route('volunteer#updateProfile', Auth()->user()->id) }}">Profile </a></li>
+                            <li><a href="{{ route('deliver#AllDeliveryForVolunteer') }}">Deliveries </a></li>
                             
                             <li>
                             <form action="{{ route('logout') }}" method="post">
                                 @csrf
                                 <a>
-                                    <button type="submit" class="btn pt-0 pb-1 px-0 nav-link text-dark" style="button:focus { outline: none; }" >  <i class="fas fa-sign-out-alt" ></i> Logout </button>
+                                    <button type="submit" style="color: white;" >  <i class="fas fa-sign-out-alt" ></i> Logout </button>
                                 </a>
                             </form>
                         </div>
@@ -74,8 +74,8 @@
     <div class="footer-content">
         <div class="footer-links">
             <a href="{{ route('volunteer#index') }}">Home</a>
-            <a href="{{ route('volunteer#viewAllMenu') }}">Menu</a>
-            <li class="list-item"><a href="/contact">Contact</a></li>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
         </div>
         <div class="footer-logo">
             <img src="{{ asset('images/logo.png') }}" alt="Logo">
