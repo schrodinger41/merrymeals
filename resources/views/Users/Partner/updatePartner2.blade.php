@@ -127,16 +127,32 @@
                 <!-- OTHER DETAILS -->
                 <div class="d-flex">
                     <div class="card-body mt-3 m-2" style="border: 2px var(--primary-color) solid">
-				        <p> <span style="font-weight: 900">BUSINESS NAME: </span>{{ $partnerData->partnership_restaurant }}</p>
-				        <hr>
-				        <p> <span style="font-weight: 900">PARTNERSHIP DURATION: </span>{{ $partnerData->partnership_duration }} </p>
-				        <hr>
-                        <p> <span style="font-weight: 900">ADDRESS: </span>{{ $partnerData->partnership_address ?? 'N/A' }} </p>
+                        <div class="row pb-3 pt-1">
+                            <div class="col-4" style="font-weight: 900">BUSINESS NAME:</div>
+                            <div class="col-8">{{ $partnerData->partnership_restaurant }}</div>
+                        </div>
                         <hr>
-                        <p> <span style="font-weight: 900">EMAIL: </span>{{ $userData->email }} </p>
+                        <div class="row pb-3 pt-3">
+                            <div class="col-4" style="font-weight: 900">PARTNERSHIP DURATION:</div>
+                            <div class="col-8">{{ $partnerData->partnership_duration }}</div>
+                        </div>
                         <hr>
-                        <p> <span style="font-weight: 900">PHONE NUMBER: </span>{{ $userData->phone }} </p>
+                        <div class="row pb-3 pt-3">
+                            <div class="col-4" style="font-weight: 900">ADDRESS:</div>
+                            <div class="col-8">{{ $partnerData->partnership_address ?? 'N/A' }}</div>
+                        </div>
+                        <hr>
+                        <div class="row pb-3 pt-3">
+                            <div class="col-4" style="font-weight: 900">EMAIL:</div>
+                            <div class="col-8">{{ $userData->email }}</div>
+                        </div>
+                        <hr>
+                        <div class="row pb-1 pt-3">
+                            <div class="col-4" style="font-weight: 900">PHONE NUMBER:</div>
+                            <div class="col-8">{{ $userData->phone }}</div>
+                        </div>
                     </div>
+                    
 
                     <!-- RECENT MEAL FEATURE -->
                     <div class="card mb-3 m-2" style="width: 335px; background-color: var(--primary-color); color: white; border: 2px #344d3b solid; border-radius: 40px;">
