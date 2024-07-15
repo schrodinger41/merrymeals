@@ -43,7 +43,7 @@
 .food-name {
     font-family: var(--main-font);
     font-weight: 900;
-    font-size: var(--h2-font-size);
+    font-size: var(--h1-font-size);
     margin: 0 0 10px;
 }
 

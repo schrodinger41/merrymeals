@@ -55,6 +55,7 @@
                 <a class="next" onclick="plusSlides(1)"></a>
             </div>
 
+
             <!-- The dots/circles -->
             <div class="dot-container">
                 <span class="dot" onclick="currentSlide(1)"></span>
