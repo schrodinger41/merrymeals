@@ -105,6 +105,7 @@ Route::group(['prefix' => 'volunteer'], function () {
     Route::get('/AllDeliveryForVolunteer', [DeliverController::class, 'AllDeliveryForVolunteer'])->name('deliver#AllDeliveryForVolunteer');
     Route::get('/updateDelivery/{id}', [DeliverController::class, 'updateDelivery'])->name('deliver#updateDelivery');
     Route::get('/updateProfile/{id}', [VolunteerController::class, 'updateProfile'])->name('volunteer#updateProfile');
+    Route::put('partner/updateProfile/{id}', [PartnerController::class, 'updateProfile'])->name('partner.updateProfile');
 });
 
 
