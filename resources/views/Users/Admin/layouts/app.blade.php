@@ -48,10 +48,8 @@
                         <a href="{{ route('admin#allDonors') }}">Donors</a>
                     </div>
                 </div>
-                <li class="list-item">><a href="{{ route('admin#allMenus') }}">Manage Menus</a></li>
-                <li class="list-item">><a href="{{ route('admin#allDeliveries') }}">Manage Deliveries</a></li>
-                <li class="list-item"><a href="/about">About</a></li>
-                <li class="list-item"><a href="/contact">Contact</a></li>
+                <li class="list-item"><a href="{{ route('admin#allMenus') }}">Manage Menus</a></li>
+                <li class="list-item"><a href="{{ route('admin#allDeliveries') }}">Manage Deliveries</a></li>
                 
                 
                 @if (Route::has('login'))
