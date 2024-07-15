@@ -60,7 +60,7 @@
             </div>
         </section>
 
-        <section class="team">
+        <section class="team" style="margin-bottom: 180px;">
             <h2>Meet Our Team</h2>
             <div class="team-members">
                 <div class="team-member">
@@ -79,17 +79,17 @@
                     <p>Head Chef</p>
                 </div>
                 <div class="team-member">
-                    <img src="{{ asset('images/member4.jpg') }}" alt="Team Member 3">
+                    <img src="{{ asset('images/member4.jpg') }}" alt="Team Member 4">
                     <h3>Jhet Dizon</h3>
                     <p>Volunteer Coordinator</p>
                 </div>
                 <div class="team-member">
-                    <img src="{{ asset('images/member5.jpg') }}" alt="Team Member 3">
+                    <img src="{{ asset('images/member5.jpg') }}" alt="Team Member 5">
                     <h3>Daniel Bobadilla</h3>
                     <p>Nutritionist</p>
                 </div>
                 <div class="team-member">
-                    <img src="{{ asset('images/member6.jpg') }}" alt="Team Member 3">
+                    <img src="{{ asset('images/member6.jpg') }}" alt="Team Member 6">
                     <h3>JND Express Pet</h3>
                     <p>Community Outreach Specialist</p>
                 </div>

@@ -37,7 +37,7 @@
             </div>
             <!-- Shortcut for ADD MEAL BUTTON. Only can be accessed by PARTNERS. -->
             <div class="row justify-content-end">
-                <div class="col-lg-3 text-end">
+                <div class="col-lg-3 text-end mb-3">
                     <!-- Button trigger modal -->
                     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: var(--accent-color); color: #474747;">
                         <b>Add a Meal Now!</b>
