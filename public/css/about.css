@@ -159,3 +159,43 @@ body {
     color: #777;
 }
 
+@media (max-width: 768px) {
+    .about-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 0 0 0;
+    }
+
+    .about-text {
+        padding: 0 20px;
+    }
+
+    .about-text p {
+        margin-bottom: 20px;
+    }
+
+    .about-image img {
+        clip-path: none;
+    }
+
+    .our-mission {
+        padding: 50px 20px;
+        height: auto;
+    }
+
+    .icon-box {
+        flex: 1 0 calc(50% - 20px);
+    }
+
+    .team {
+        margin: 50px auto;
+    }
+
+    .team-members {
+        flex-direction: column;
+    }
+
+    .team-member {
+        width: 100%;
+    }
+}

@@ -7,7 +7,7 @@ body {
 
 /* IMAGE SLIDESHOW SECTION */
 .slideshow-container {
-    margin-top: 82px !important;
+    margin-top: 100px !important;
     max-width: 100%;
     height: 70vh;
     position: relative;
@@ -106,10 +106,10 @@ body {
 .home-content {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Align items vertically center */
-    flex-direction: row; /* Align items in a row */
+    align-items: center;
+    flex-direction: row;
     width: 80%;
-    margin: 2rem auto; /* Center the content container horizontally */
+    margin: 2rem auto;
     height: 60vh;
     font-size: var(--h3-font-size);
 }
@@ -118,6 +118,9 @@ body {
     flex: 1;
     text-align: center;
     margin: 0 2rem;
+    background-color: var(--accent-color);
+    padding: 50px 30px;
+    border-radius: 10px;
 }
 
 .column h2 {
@@ -125,6 +128,8 @@ body {
     display: inline-block;
     margin-bottom: 1rem;
     font-weight: var(--weight-800);
+    color: var(--primary-color);
+    font-size: var(--h2-font-size);
 }
 
 .column h2::after {
@@ -132,7 +137,7 @@ body {
     display: block;
     width: 100%;
     height: 2px;
-    background: black;
+    background: var(--primary-color);
     margin-top: 0.5rem;
 }
 
@@ -170,6 +175,7 @@ body {
     font-size: var(--h1-font-size);
     font-weight: var(--weight-600);
     transition: font-size 0.3s ease;
+    text-align: center;
 }
 
 .donate-link:hover {
@@ -237,4 +243,58 @@ body {
   margin-top: 15px;
   font-weight: bold;
   color: #333;
+}
+
+
+@media (max-width: 768px) {
+    
+    .home-content {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+
+    .column {
+        margin: 1rem 0;
+        width: 100%;
+    }
+
+    .slideshow-container {
+        height: 50vh;
+    }
+
+    .slideshow-container img {
+        height: 50vh;
+    }
+
+    .dot-container {
+        bottom: 350px;
+    }
+
+    .home-image {
+        height: auto;
+    }
+
+    .donate-link:hover {
+        font-size: var(--h2-font-size);
+        font-weight: bolder;
+        text-decoration: underline;
+    }
+
+    .volunteer-testimonials {
+        flex-direction: column;
+    }
+
+    .volunteer-testimonial {
+        width: 80%;
+        margin: 40px auto;
+    }
+
+    .text {
+        font-size: var(--h2-font-size);
+    }
+
+    .donate-link {
+        font-size: var(--h2-font-size);
+    }
 }
