@@ -22,7 +22,7 @@ THIS WEEK'S MENU!
             </div>
             <div class="food-details">
                 <h1 class="food-name">{{ $viewMenu->menu_title }}</h1>
-                <h2 class="user-names">User Name</h2>
+                <h2 class="user-names">Description</h2>
                 <p class="food-description">{{ $viewMenu->menu_description }}</p>
                 <div class="button-container">
                   <a href="{{ route('partner#deleteMenu', $viewMenu->id) }}"><button type="submit" value="Delete" class="delete-button">Delete</button></a>
