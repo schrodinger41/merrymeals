@@ -101,4 +101,35 @@ class VolunteerController extends Controller
         return view('Users.Volunteer.updateVolunteer2')->with(['volunteerData' => $volunteerData, 'userData' => $userData, ]);
     }
     
+    public function saveProfile(Request $request, $user_id)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'age' => 'required|integer',
+            'gender' => 'required|integer',
+            'volunteer_vaccination' => 'required|integer',
+            'volunteer_duration' => 'required|string|max:255',
+            'volunteer_available' => 'required|array',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:255',
+        ]);
+
+        // Update User
+        $user = User::where('id', $user_id)->first();
+        $user->name = $validated['name'];
+        $user->age = $validated['age'];
+        $user->gender = $validated['gender'];
+        $user->email = $validated['email'];
+        $user->phone = $validated['phone'];
+        $user->save();
+
+        // Update Volunteer
+        $volunteer = Volunteer::where('user_id', $user_id)->first();
+        $volunteer->volunteer_vaccination = $validated['volunteer_vaccination'];
+        $volunteer->volunteer_duration = $validated['volunteer_duration'];
+        $volunteer->volunteer_available = json_encode($validated['volunteer_available']);
+        $volunteer->save();
+
+        return redirect()->route('volunteer#updateProfile', $user_id)->with('success', 'Profile updated successfully');
+    }
 }
