@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
- 
-<head>
-    <style type="text/css">
-        #form {
-            max-width: 500px;
-            padding: 20px;
-            margin: 50px auto;
-            background-color: #fff;
-            border: 1px solid rgba(0,0,0,0.1);
-        }
 
-        label {
-            font-weight: normal;
-        }
-    </style>
-    <!-- Bootstrap CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <!-- Styles -->
+    <link href="{{ asset('css/header.css') }}" rel="stylesheet">    
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/register.css') }}" rel="stylesheet">
+  
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
         $(document).ready(function(){
@@ -34,231 +28,147 @@
         });
     </script>
 </head>
-@section('title')
+<body>
+    @extends('layouts.app')
+    
+    @section('title')
     Register
     @endsection
 
-    @extends('layouts.app')
     @section('content')
-<body>
+    <div class="background" style="background-image: url('{{ asset('images/login_img.jpg') }}')">
+        <div class="register-container">
+            <h2>{{ __('REGISTER WITH US!') }}</h2>
+            <form method="POST" action="{{ route('register') }}">
+                @csrf
+                <div class="input-group">
+                    <input type="text" name="name" id="name" placeholder="Name" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="input-group">
+                    <select name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="0">Male</option>
+                        <option value="1">Female</option>
+                    </select>
+                    <i class="fas fa-venus-mars"></i>
+                </div>
+                <div class="input-group">
+                    <input type="number" name="age" id="age" placeholder="Age" required>
+                    <i class="fas fa-calendar"></i>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="input-group">
+                    <input type="tel" name="phone" id="phone" maxlength="11" placeholder="Phone Number" required>
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="input-group">
+                    <textarea name="address" id="address" placeholder="Address" required></textarea>
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="geolocation" id="location" placeholder="Geo Location">
+                    <input type="button" value="Get Location" onclick="getlocation()" />
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <script>
+                    function getlocation() {
+                        navigator.geolocation.getCurrentPosition(showLoc);
+                    }
     
-
-   
-    <div class="container-fluid" style="margin-top: 82px;">
-        <div class="row" style="display: flex;">
-            <div class="col col-sm-8" id="form">
-                <h2>Register With Us!</h2>
-
-                <form method="POST" action="{{ route('register') }}">
-                    @csrf
-
-                    <div class="row mb-4">
-                        <label for="name" class="col-md-4 col-form-label">Name</label>
-                        <div class="col-md-8">
-                            <input type="text" name="name" id="name" class="form-control" required>
+                    function showLoc(pos) {
+                        var lat = pos.coords.latitude;
+                        var log = pos.coords.longitude;
+                        document.getElementById("location").value = lat + "," + log;
+                    }
+                </script>
+                <div class="input-group">
+                    <select name="role" required>
+                        <option value="">Register as:</option>
+                        <option value="member">Member</option>
+                        <option value="partner">Partner</option>
+                        <option value="volunteer">Volunteer</option>
+                    </select>
+                    <i class="fas fa-users"></i>
+                </div>
+    
+                <!-- Member box -->
+                <div class="member box" style="display: none;">
+                    <div class="input-group">
+                        <input type="text" name="member_caregiver_name" id="member_caregiver_name" placeholder="Care Giver Name">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="member_caregiver_relation" id="member_caregiver_relation" placeholder="Care Giver Relationship">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="member_medical_condition" id="member_medical_condition" placeholder="Requestor Medical Condition">
+                        <i class="fas fa-notes-medical"></i>
+                    </div>
+                    <div class="input-group">
+                        <input type="number" name="member_medical_number" id="member_medical_number" placeholder="Medical Card ID">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <div class="input-group">
+                        <label>Meal Plan Duration (days):</label>
+                        <input type="number" name="member_meal_duration" value="30" readonly placeholder="Meal Plan Duration (days)">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                </div>
+    
+                <!-- Partner box -->
+                <div class="partner box" style="display: none;">
+                    <div class="input-group">
+                        <input type="text" name="partnership_restaurant" placeholder="Restaurant Name">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="partnership_duration" placeholder="Partnership Duration (days)">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                </div>
+    
+                <!-- Volunteer box -->
+                <div class="volunteer box" style="display: none;">
+                    <div class="input-group">
+                        <label>Volunteer Vaccination Status:</label>
+                        <div>
+                            <label><input type="radio" name="volunteer_vaccination" value="0"> Yes</label>
+                            <label><input type="radio" name="volunteer_vaccination" value="1"> No</label>
                         </div>
                     </div>
-
-                    <fieldset class="row mb-3">
-                        <label class="col-form-label col-sm-4 pt-0">Gender</label>
-                        <div class="col-sm-8">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" id="inline_Radio1" value="0" required="">
-                                <label class="form-check-label" for="inlineRadio1" name="gender">Male</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" id="inline_Radio2" value="1" required="">
-                                <label class="form-check-label" for="inlineRadio2" name="gender">Female</label>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <div class="row mb-4">
-                        <label for="age" class="col-sm-4 col-form-label">Age</label>
-                        <div class="col-sm-8">
-                            <input type="number" class="form-control" name="age" id="age" required>
+                    <div class="input-group">
+                        <input type="text" name="volunteer_duration" placeholder="Volunteer Duration (days)">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="input-group">
+                        <label>Available day/s:</label>
+                        <div>
+                            <label><input type="checkbox" name="volunteer_available[]" value="Monday"> Monday</label>
+                            <label><input type="checkbox" name="volunteer_available[]" value="Tuesday"> Tuesday</label>
+                            <label><input type="checkbox" name="volunteer_available[]" value="Wednesday"> Wednesday</label>
+                            <label><input type="checkbox" name="volunteer_available[]" value="Thursday"> Thursday</label>
+                            <label><input type="checkbox" name="volunteer_available[]" value="Friday"> Friday</label>
+                            <label><input type="checkbox" name="volunteer_available[]" value="Saturday"> Saturday</label>
+                            <label><input type="checkbox" name="volunteer_available[]" value="Sunday"> Sunday</label>
                         </div>
                     </div>
-
-                    <div class="row mb-4">
-                        <label for="email" class="col-sm-4 col-form-label">Email</label>
-                        <div class="col-sm-8">
-                            <input type="email" class="form-control" name="email" id="email" required>
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <label for="password" class="col-sm-4 col-form-label">Password</label>
-                        <div class="col-sm-8">
-                            <input type="password" class="form-control" name="password" id="password" required>
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <label for="phone" class="col-sm-4 col-form-label">Phone number</label>
-                        <div class="col-sm-8">
-                            <input type="tel" class="form-control" maxlength="11" required name="phone" id="phone">
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <label for="address" class="col-sm-4 col-form-label">Address</label>
-                        <div class="col-sm-8">
-                            <textarea class="form-control" required name="address" id="address"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <label for="geolocation" class="col-sm-4 col-form-label">Geo Location <span>(To better improve our services)</span></label>
-                        <div class="col-sm-8" style="display: flex; height: fit-content;">
-                            <input type="text" name="geolocation" id="location" />
-                            <input type="button" value="GetLocation" onclick="getlocation()" />
-                        </div>
-                    </div>
-
-                    <script>
-                        function getlocation() {
-                            navigator.geolocation.getCurrentPosition(showLoc);
-                        }
-
-                        function showLoc(pos) {
-                            var lat = pos.coords.latitude;
-                            var log = pos.coords.longitude;
-                            document.getElementById("location").value = lat + "," + log;
-                        }
-                    </script>
-
-                    <div class="row mb-4">
-                        <label for="role" class="col-sm-4 col-form-label">Register as:</label>
-                        <div class="col-sm-8">
-                            <select class="form-select" name="role" required>
-                                <option value="">Please select</option>
-                                <option value="member">Member</option>
-                                <option value="partner">Partner</option>
-                                <option value="volunteer">Volunteer</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Member box -->
-                    <div class="member box">
-                        <div class="row mb-4">
-                            <label for="member_caregiver_name" class="col-sm-4 col-form-label">Care Giver Name</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" name="member_caregiver_name" id="member_caregiver_name">
-                            </div>
-                        </div>
-
-                        <div class="row mb-4">
-                            <label for="member_caregiver_relation" class="col-sm-4 col-form-label">Care Giver Relationship</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" maxlength="11" name="member_caregiver_relation" id="member_caregiver_relation">
-                            </div>
-                        </div>
-
-                        <div class="row mb-4">
-                            <label for="member_medical_condition" class="col-sm-4 col-form-label">Requestor Medical Condition</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" maxlength="11" name="member_medical_condition" id="member_medical_condition">
-                            </div>
-                        </div>
-
-                        <div class="row mb-4">
-                            <label for="member_medical_number" class="col-sm-4 col-form-label">Medical Card ID</label>
-                            <div class="col-sm-8">
-                                <input type="number" class="form-control" maxlength="11" name="member_medical_number" id="member_medical_number">
-                            </div>
-                        </div>
-
-                        <div class="row mb-4">
-                            <label for="member_meal_duration" class="col-sm-4 col-form-label">Meal Plan Duration (days)</label>
-                            <div class="col-sm-8">
-                                <input type="number" class="form-control" maxlength="11" name="member_meal_duration" value="30" readonly>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Partner box -->
-                    <div class="partner box">
-                        <div class="row mb-4">
-                            <label for="partnership_restaurant" class="col-sm-4 col-form-label">Restaurant Name</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" name="partnership_restaurant">
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <label for="partnership_duration" class="col-sm-4 col-form-label">Partnership Duration</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" name="partnership_duration">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Volunteer box -->
-                    <div class="volunteer box">
-                        <fieldset class="row mb-3">
-                            <label class="col-form-label col-sm-4 pt-0">Volunteer Vaccination Status</label>
-                            <div class="col-sm-8">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="volunteer_vaccination" id="inlineRadio1" value="0">
-                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="volunteer_vaccination" id="inlineRadio2" value="1">
-                                    <label class="form-check-label" for="inlineRadio2">No</label>
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <div class="row mb-4">
-                            <label for="volunteer_duration" class="col-sm-4 col-form-label">Volunteer Duration</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" name="volunteer_duration">
-                            </div>
-                        </div>
-
-                        <fieldset class="row mb-3">
-                            <label class="col-form-label col-sm-4 pt-0">Available day</label>
-                            <div class="col-sm-8">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" name="volunteer_available[]" value="Monday" type="checkbox">
-                                    <label class="form-check-label" for="inlineCheckbox1">Monday</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" name="volunteer_available[]" value="Tuesday" type="checkbox">
-                                    <label class="form-check-label" for="inlineCheckbox2">Tuesday</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" name="volunteer_available[]" value="Wednesday" type="checkbox">
-                                    <label class="form-check-label" for="inlineCheckbox3">Wednesday</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" name="volunteer_available[]" value="Thursday" type="checkbox">
-                                    <label class="form-check-label" for="inlineCheckbox4">Thursday</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" name="volunteer_available[]" value="Friday" type="checkbox">
-                                    <label class="form-check-label" for="inlineCheckbox5">Friday</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" name="volunteer_available[]" value="Saturday" type="checkbox">
-                                    <label class="form-check-label" for="inlineCheckbox6">Saturday</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" name="volunteer_available[]" value="Sunday" type="checkbox">
-                                    <label class="form-check-label" for="inlineCheckbox7">Sunday</label>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-
-                    <button type="submit" class="btn btn-outline-primary" name="button2" style="float: right;">Register</button>
-                    <button type="reset" class="btn btn-outline-danger" style="float: right; margin-right: 20px;">Clear</button>
-                </form>
-            </div>
+                </div>
+    
+                <button class="register-button" type="submit">Register</button>
+            </form>
         </div>
     </div>
-
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    @endsection
 </body>
-@endsection
 </html>

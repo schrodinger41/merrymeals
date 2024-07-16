@@ -1,0 +1,152 @@
+body {
+    font-family: var(--main-font);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.background {
+    background-size: cover;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 20px;
+    margin-top: 82px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    color: black;
+    width: 400px;
+}
+
+.register-container h2 {
+    margin-bottom: 20px;
+    font-size: var(--h3-font-size);
+    font-weight: bold;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-group input, .input-group select, .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.input-group i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.options a {
+    text-decoration: none;
+}
+
+.options a:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+.register-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: var(--secondary-color);
+    font-size: 16px;
+    font-weight: var(--weight-600);
+    cursor: pointer;
+    color: #fff;
+}
+
+.register-button:hover {
+    background: var(--primary-color);
+}
+
+.register-container p {
+    margin-top: 20px;
+}
+
+.register-container p a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-container p a:hover {
+    text-decoration: underline;
+}
+
+
+.input-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.input-group div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.input-group div label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: normal;
+}
+
+.input-group input[type="radio"],
+.input-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+    border: 1px solid var(--primary-color);
+}
+
+.volunteer .input-group label {
+    margin-bottom: 10px;
+}
+
+.volunteer .input-group div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.volunteer .input-group div label {
+    margin-bottom: 5px;
+}
+
+.volunteer .input-group div label:nth-child(n+3) {
+    flex-basis: 45%;
+    margin-bottom: 5px;
+}
+
+.volunteer .input-group div label:nth-child(2n+1) {
+    flex-basis: 45%;
+    margin-bottom: 5px;
+}
