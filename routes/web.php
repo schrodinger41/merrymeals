@@ -59,6 +59,9 @@ Route::middleware([
     Route::get('/management', function () {
         return view('management');
     })->name('management');
+    Route::get('/members-menu', function () {
+        return view('Users/Member/memberMenu');
+    })->name('members-menu');
 });
 
 

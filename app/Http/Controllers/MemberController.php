@@ -113,12 +113,16 @@ class MemberController extends Controller
     {
         return view('Users.Member.foodSafetyDeclaration');
     }
+    
+    
     public function viewAllMenu()
     {
         $menuData = Menu::all();
 
         return view('Users.Member.memberMenu')->with(['menuData' => $menuData]);
     }
+   
+    
 
     public function viewMenu($id)
     {
