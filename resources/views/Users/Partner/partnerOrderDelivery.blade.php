@@ -14,7 +14,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Menu</title>
+    <style>
+        .buttons {
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 800;
+            margin-left: 10px;
+        }
+
+        .buttons:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+    </style>
 </head>
 <body style="overflow-x: hidden;">
 
@@ -66,7 +78,7 @@
                                             <td>
                                                 <form action="{{ route('order#updateOrder', $order ->id) }}" method="GET">
                                                 <input type="text" name="start_cooking_time" value="{{ $order -> start_cooking_time }}" readonly/>
-                                                <button  type="submit" class="btn btn-primary">Start</button>
+                                                <button  type="submit" class="btn buttons">Start</button>
                                                 </form>
                                             </td>
                                             <td>
@@ -77,7 +89,7 @@
                                                     <option value="Being prepared">Being prepared</option>
                                                     <option value="Ready to deliver">Ready to delivery</option>
                                                 </select>
-                                                <button  type="submit" class="btn btn-primary">Send Status</button>
+                                                <button  type="submit" class="btn buttons">Send Status</button>
                                                 </form>
                                             </td>
                                             <td>

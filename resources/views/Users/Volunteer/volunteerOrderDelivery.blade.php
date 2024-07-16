@@ -14,7 +14,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile</title>
+    <style>
+        .buttons {
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 800;
+            margin-left: 10px;
+        }
+
+        .buttons:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
@@ -55,44 +67,42 @@
                                     <tbody>
                                         @foreach($deliveryData as $delivery)
                                         <tr>
-                                            <td>{{ $delivery -> id }}</td>
-                                            <td>{{ $delivery -> member_name }}</td>
-                                            <td>{{ $delivery -> member_address }}</td>
-                                            <td>{{ $delivery -> partner_restaurant_name }}</td>
-                                            <td>{{ $delivery -> partner_address }}</td>
+                                            <td>{{ $delivery->id }}</td>
+                                            <td>{{ $delivery->member_name }}</td>
+                                            <td>{{ $delivery->member_address }}</td>
+                                            <td>{{ $delivery->partner_restaurant_name }}</td>
+                                            <td>{{ $delivery->partner_address }}</td>
                                             <?php 
-                                            $str = $delivery -> created_at;
+                                            $str = $delivery->created_at;
                                             $newstr = explode(" ", $str);
                                             $date = $newstr[0];
                                             $time = $newstr[1];
                                             ?>
-                                            <td><?php echo $date;  ?></td>
-                                            <td><?php echo $time;  ?></td>
+                                            <td>{{ $date }}</td>
+                                            <td>{{ $time }}</td>
                                             <td>
-                                                <form action="{{ route('deliver#updateDelivery', $delivery ->id) }}" method="GET" >
-                                                    <input type="text" name="volunteer_name" value="{{ $delivery -> volunteer_name }}" readonly/>
-                                                    <button  type="submit" class="btn btn-primary">Accept request</button>
-                                                    </form>
+                                                <form action="{{ route('delivery#updateDelivery', $delivery->id) }}" method="GET">
+                                                    <input type="text" name="volunteer_name" value="{{ $delivery->volunteer_name }}" readonly/>
+                                                    <button type="submit" class="btn buttons">Accept request</button>
+                                                </form>
                                             </td>
                                             <td>
-                                                <form action="{{ route('deliver#updateDelivery', $delivery ->id) }}" method="GET">
-                                                    <input type="text" name="start_deliver_time" value="{{ $delivery -> start_deliver_time }}" readonly/>
-                                                    <button  type="submit" class="btn btn-primary">Start</button>
-                                                    </form>
+                                                <form action="{{ route('delivery#updateDelivery', $delivery->id) }}" method="GET">
+                                                    <input type="text" name="start_deliver_time" value="{{ $delivery->start_deliver_time }}" readonly/>
+                                                    <button type="submit" class="btn buttons">Start</button>
+                                                </form>
                                             </td>
                                             <td>
-                                                <form action="{{ route('deliver#updateDelivery', $delivery ->id) }}" method="GET">
-                                                    {{-- <input type="text" name="delivery_status" value="{{ $delivery -> delivery_status }}" /> --}}
-                                                    <select name="delivery_status" value="{{ $delivery -> delivery_status }}">
+                                                <form action="{{ route('delivery#updateDelivery', $delivery->id) }}" method="GET">
+                                                    <select name="delivery_status" value="{{ $delivery->delivery_status }}">
                                                         <option value=""></option>
                                                         <option value="Pick the meal">Pick up the meal</option>
                                                         <option value="On the way to destination">On the way to destination</option>
-                                                        <option value="Arrived at destinayion">Arrived at destination</option>
+                                                        <option value="Arrived at destination">Arrived at destination</option>
                                                     </select>
-                                                    <button  type="submit" class="btn btn-primary">Send Status</button>
-                                                    </form>
+                                                    <button type="submit" class="btn buttons">Send Status</button>
+                                                </form>
                                             </td>
-                                           
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -107,3 +117,4 @@
 </div>
 @endsection
 </body>
+</html>

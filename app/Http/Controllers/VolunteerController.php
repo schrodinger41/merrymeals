@@ -132,4 +132,22 @@ class VolunteerController extends Controller
 
         return redirect()->route('volunteer#updateProfile', $user_id)->with('success', 'Profile updated successfully');
     }
+    public function updateDelivery(Request $request, $id)
+    {
+        $delivery = Volunteer::findOrFail($id);
+        
+        if ($request->has('volunteer_name')) {
+            $delivery->volunteer_name = $request->volunteer_name;
+            $delivery->save();
+        } elseif ($request->has('start_deliver_time')) {
+            $delivery->start_deliver_time = now();
+            $delivery->save();
+        } elseif ($request->has('delivery_status')) {
+            $delivery->delivery_status = $request->delivery_status;
+            $delivery->save();
+        }
+
+        return redirect()->route('volunteer#updateProfile')->with('success', 'Delivery updated successfully');
+    }
+    
 }
