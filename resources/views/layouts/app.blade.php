@@ -48,10 +48,9 @@
                 <li class="list-item"><a href="/">Home</a></li>
                 <li class="list-item"><a href="/about">About</a></li>
                 <li class="list-item"><a href="/contact">Contact</a></li>
-                <div class="user-name">Public User</div>
                 
                     <div class="dropdowns">
-                        <button class="dropdown-toggles">▼</button>
+                        <button class="dropdown-toggles user-name">Public User</button>
                         <div class="dropdown-menus">
                            
                            

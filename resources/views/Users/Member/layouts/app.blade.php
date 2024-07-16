@@ -48,7 +48,7 @@
 
                 @if (Route::has('login'))
                     <div class="dropdowns">
-                        <button class="dropdown-toggles"><div class="user-name">{{ Auth()->user()->name }}▼</div></button>
+                        <button class="dropdown-toggles"><div class="user-name">{{ Auth()->user()->name }}</div></button>
                         <div class="dropdown-menus">
                             <li><a href="{{ route('member#updateProfile', Auth()->user()->id) }}">Profile </a></li>
                             <?php 
