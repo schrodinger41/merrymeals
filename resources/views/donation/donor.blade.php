@@ -128,7 +128,7 @@
                 display: block;
                 margin: 0 auto;
                 /* Center image horizontally */
-                max-width: 10%;
+                max-width: 20%;
                 /* Ensures image scales with container */
                 height: auto;
                 /* Maintains aspect ratio */
