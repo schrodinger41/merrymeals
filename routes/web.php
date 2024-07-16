@@ -65,7 +65,6 @@ Route::middleware([
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     if (Auth::check()) {
-
         if (Auth::user()->role == 'member') {
             return redirect()->route('member#index');
         } else if (Auth::user()->role == 'partner') {
