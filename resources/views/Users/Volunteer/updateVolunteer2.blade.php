@@ -45,7 +45,7 @@
                                 <!-- FORM -->
                                 <div class="was-validated">
                                     <div class="mb-3 mt-3">
-                                        <label for="name" class="d-flex form-label">Name:</label>
+                                        <label for="name" class="d-flex form-label" style="font-weight: 900">Name:</label>
                                         <input type="text" class="form-control"
                                         placeholder="Enter full name" name="name"
                                         required="true" />
@@ -55,7 +55,7 @@
                                     </div>
 
                                     <div class="mb-3 mt-3">
-                                        <label for="age" class="d-flex form-label">Age:</label>
+                                        <label for="age" class="d-flex form-label" style="font-weight: 900">Age:</label>
                                         <input type="text" class="form-control"
                                         placeholder="Enter age" name="age"
                                         required="true" />
@@ -65,7 +65,7 @@
                                     </div>
 
                                     <div class="mb-3 mt-3">
-                                        <label for="gender" class="d-flex form-label">Gender:</label>
+                                        <label for="gender" class="d-flex form-label" style="font-weight: 900">Gender:</label>
                                         <div class="col-sm-8">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="gender" id="inline_Radio1" value="0" required="">
@@ -79,7 +79,7 @@
                                     </div>
                                     
                                     <div class="mb-3 mt-3">
-                                        <label for="caregiversname" class="d-flex form-label"></label>Volunteer Vaccination Status: </label>
+                                        <label for="caregiversname" class="d-flex form-label" style="font-weight: 900">Volunteer Vaccination Status: </label>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" name="volunteer_vaccination" id="inlineRadio1" value="0">
                                             <label class="form-check-label" for="inlineRadio1">Yes</label>
@@ -92,7 +92,7 @@
                                     </div>
 
                                     <div class="mb-3 mt-3">
-                                        <label for="address" class="d-flex form-label">Volunteer Duration:</label>
+                                        <label for="address" class="d-flex form-label" style="font-weight: 900">Volunteer Duration:</label>
                                         <input type="text" class="form-control"
                                         placeholder="Enter volunteer duration" name="volunteer_duration" 
                                         required="true" />
@@ -102,7 +102,7 @@
                                     </div>
 
                                     <div class="mb-3 mt-3">
-                                        <label for="address" class="d-flex form-label">Available day:</label>
+                                        <label for="address" class="d-flex form-label" style="font-weight: 900">Available day:</label>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" name="volunteer_available[]" value="Monday" type="checkbox">
                                             <label class="form-check-label" for="inlineCheckbox1">Monday</label>
@@ -134,7 +134,7 @@
                                     </div>
 
                                     <div class="mb-3 mt-3">
-                                        <label for="email" class="d-flex form-label">Email:</label>
+                                        <label for="email" class="d-flex form-label" style="font-weight: 900">Email:</label>
                                         <input type="text" class="form-control"
                                         placeholder="Enter email" name="email"
                                         required="true" />
@@ -144,7 +144,7 @@
                                     </div>
     
                                     <div class="mb-3">
-                                        <label for="number" class="d-flex form-label">Phone Number:</label>
+                                        <label for="number" class="d-flex form-label" style="font-weight: 900">Phone Number:</label>
                                         <input type="text" class="form-control"
                                         placeholder="Enter phone number" name="phone"
                                         required="true" />
@@ -152,26 +152,17 @@
                                         <div class="invalid-feedback">Please fill out this
                                         field.</div>
                                     </div>
-    
-                                    {{-- <div class="mb-3">
-                                        <label class="d-flex form-label">Upload Profile Photo:</label> 
-                                        <input type="file" class="form-control" name=""
-                                        required="true" />
-                                        <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please fill out this
-                                        field.</div>
-                                    </div> --}}
                                 </div>
                                         
                             </div>
 
                             <div class="d-flex justify-content-center pb-2">
-								<button type="submit" class="btn btn-outline-dark">Save</button>
+								<button type="submit" class="btn btn-outline-dark" style="font-weight: 900">Save</button>
 							</div>
                         </form>
                         
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="font-weight: 900">Cancel</button>
                         </div>
                     
 					</div>

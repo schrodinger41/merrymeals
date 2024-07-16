@@ -41,25 +41,25 @@
 						</div>
 						<form action="{{ route('member.updateProfilePost', $userData->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <div class="modal-body">
+                            <div class="modal-body" >
                                 <!-- FORM -->
                                 <div class="was-validated">
                                     <div class="mb-3 mt-3">
-                                        <label for="name" class="d-flex form-label">Name:</label>
+                                        <label for="name" class="d-flex form-label" style="font-weight: 900">Name:</label>
                                         <input type="text" class="form-control" placeholder="Enter full name" name="name" value="{{ $userData->name }}" required />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
                         
                                     <div class="mb-3 mt-3">
-                                        <label for="age" class="d-flex form-label">Age:</label>
+                                        <label for="age" class="d-flex form-label" style="font-weight: 900">Age:</label>
                                         <input type="text" class="form-control" placeholder="Enter age" name="age" value="{{ $memberData->age }}" required />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
                         
                                     <div class="mb-3 mt-3">
-                                        <label for="gender" class="d-flex form-label">Gender:</label>
+                                        <label for="gender" class="d-flex form-label" style="font-weight: 900">Gender:</label>
                                         <div class="col-sm-8">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="gender" id="inline_Radio1" value="0" required="">
@@ -70,34 +70,31 @@
                                                 <label class="form-check-label" for="inlineRadio2" name="gender">Female</label>
                                             </div>
                                         </div>
-                                        {{-- <input type="text" class="form-control" placeholder="Enter gender" name="gender" value="{{ $memberData->gender }}" required />
-                                        <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please fill out this field.</div> --}}
                                     </div>
                         
                                     <div class="mb-3 mt-3">
-                                        <label for="caregiversname" class="d-flex form-label">Caregiver's Name:</label>
+                                        <label for="caregiversname" class="d-flex form-label" style="font-weight: 900">Caregiver's Name:</label>
                                         <input type="text" class="form-control" placeholder="Write N/A if none" name="member_caregiver_name" value="{{ $memberData->member_caregiver_name }}" required />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
                         
                                     <div class="mb-3 mt-3">
-                                        <label for="address" class="d-flex form-label">Address:</label>
+                                        <label for="address" class="d-flex form-label" style="font-weight: 900">Address:</label>
                                         <input type="text" class="form-control" placeholder="Enter your address" name="address" value="{{ $userData->address }}" required />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
                         
                                     <div class="mb-3 mt-3">
-                                        <label for="email" class="d-flex form-label">Email:</label>
+                                        <label for="email" class="d-flex form-label" style="font-weight: 900">Email:</label>
                                         <input type="text" class="form-control" placeholder="Enter email" name="email" value="{{ $userData->email }}" required />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
                         
                                     <div class="mb-3">
-                                        <label for="number" class="d-flex form-label">Phone Number:</label>
+                                        <label for="number" class="d-flex form-label" style="font-weight: 900">Phone Number:</label>
                                         <input type="text" class="form-control" placeholder="Enter phone number" name="phone" value="{{ $userData->phone }}" required />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
@@ -106,12 +103,12 @@
                             </div>
                         
                             <div class="d-flex justify-content-center pb-2">
-                                <button type="submit" class="btn btn-outline-dark">Save</button>
+                                <button type="submit" class="btn btn-outline-dark" style="font-weight: 900">Save</button>
                             </div>
                         </form>
                         
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="font-weight: 900">Cancel</button>
                         </div>
                     
 					</div>
