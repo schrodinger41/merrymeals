@@ -37,6 +37,7 @@
 
 .user-name {
     padding-right: 5px;
+    padding-left: 10px;
     font-weight: 900;
     font-size: var(--h3-font-size);
     color: #87a486;
