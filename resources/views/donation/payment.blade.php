@@ -190,7 +190,7 @@
                     @csrf
                     <div class="input-control">
                         <label for="card_name">Card Holder's Full Name</label>
-                        <input type="text" class="form-control" id="card_name" name="card_name" />
+                        <input type="text" class="form-control" id="card_name" name="card_name" style="width:600px;"/>
                         <div class="error"></div>
                     </div>
                     <div class="input-control">
