@@ -30,7 +30,7 @@
 
              <!-- MODAL -->
              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
-                <div class="modal-dialog">
+                <div class="modal-dialog" style="margin-top: 120px">
                     <div class="modal-content" style="background-color: var(--accent-color); color: rgb(31, 31, 31);">
                         <div class="modal-header align-items-center justify-content-center">
                             <h5 class="modal-title text-center" id="exampleModalLabel"> <b> EDIT PROFILE </b> </h5>
@@ -42,42 +42,42 @@
                                 <!-- FORM -->
                                 <div class="was-validated">
                                     <div class="mb-3 mt-3">
-                                        <label for="name" class="d-flex form-label">Name:</label>
+                                        <label for="name" class="d-flex form-label" style="font-weight: 900;">Name:</label>
                                         <input type="text" class="form-control" placeholder="Enter full name" name="name" value="{{ $userData->name }}" required />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
 
                                     <div class="mb-3 mt-3">
-                                        <label for="businessname" class="d-flex form-label">Business Name:</label>
+                                        <label for="businessname" class="d-flex form-label" style="font-weight: 900;">Business Name:</label>
                                         <input type="text" class="form-control" placeholder="Enter the name of your business or company" name="partnership_restaurant" value="{{ $partnerData->partnership_restaurant }}" required />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
 
                                     <div class="mb-3 mt-3">
-                                        <label for="duration" class="d-flex form-label">Partnership Duration:</label>
+                                        <label for="duration" class="d-flex form-label" style="font-weight: 900;">Partnership Duration:</label>
                                         <input type="text" class="form-control" placeholder="Enter the duration of your partnership" name="partnership_duration" value="{{ $partnerData->partnership_duration }}" required />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
                                     
                                     <div class="mb-3 mt-3">
-                                        <label for="address" class="d-flex form-label">Address:</label>
+                                        <label for="address" class="d-flex form-label" style="font-weight: 900;">Address:</label>
                                         <input type="text" class="form-control" placeholder="Enter your address" name="address" value="{{ $partnerData->partnership_address }}" required />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
 
                                     <div class="mb-3 mt-3">
-                                        <label for="email" class="d-flex form-label">Email:</label>
+                                        <label for="email" class="d-flex form-label" style="font-weight: 900;">Email:</label>
                                         <input type="text" class="form-control" placeholder="Enter email" name="email" value="{{ $userData->email }}" required />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
 
                                     <div class="mb-3">
-                                        <label for="number" class="d-flex form-label">Phone Number:</label>
+                                        <label for="number" class="d-flex form-label" style="font-weight: 900;">Phone Number:</label>
                                         <input type="text" class="form-control" placeholder="Enter phone number" name="phone" value="{{ $userData->phone }}" required />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
@@ -96,7 +96,7 @@
                             </div>
 
                             <div class="d-flex justify-content-center pb-2">
-                                <button type="submit" class="btn btn-outline-dark">Edit</button>&nbsp;
+                                <button type="submit" class="btn btn-outline-dark" style="font-weight: 900;">Edit</button>&nbsp;
                             </div>
                         </form>
                         
