@@ -100,4 +100,5 @@ class VolunteerController extends Controller
 
         return view('Users.Volunteer.updateVolunteer2')->with(['volunteerData' => $volunteerData, 'userData' => $userData, ]);
     }
+    
 }

@@ -39,96 +39,75 @@
 						<div class="modal-header align-items-center justify-content-center">
 							<h5 class="modal-title text-center" id="exampleModalLabel"> <b> EDIT PROFILE </b> </h5>
 						</div>
-						<form action="{{ route('partner#saveMenu') }}" method="POST" enctype="multipart/form-data">
+						<form action="{{ route('member.updateProfilePost', $userData->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="modal-body">
                                 <!-- FORM -->
                                 <div class="was-validated">
                                     <div class="mb-3 mt-3">
                                         <label for="name" class="d-flex form-label">Name:</label>
-                                        <input type="text" class="form-control"
-                                        placeholder="Enter full name" name=""
-                                        required="true" />
+                                        <input type="text" class="form-control" placeholder="Enter full name" name="name" value="{{ $userData->name }}" required />
                                         <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please fill out this
-                                        field.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
-
+                        
                                     <div class="mb-3 mt-3">
                                         <label for="age" class="d-flex form-label">Age:</label>
-                                        <input type="text" class="form-control"
-                                        placeholder="Enter age" name=""
-                                        required="true" />
+                                        <input type="text" class="form-control" placeholder="Enter age" name="age" value="{{ $memberData->age }}" required />
                                         <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please fill out this
-                                        field.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
-
+                        
                                     <div class="mb-3 mt-3">
                                         <label for="gender" class="d-flex form-label">Gender:</label>
-                                        <input type="text" class="form-control"
-                                        placeholder="Enter gender" name=""
-                                        required="true" />
+                                        <div class="col-sm-8">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="gender" id="inline_Radio1" value="0" required="">
+                                                <label class="form-check-label" for="inlineRadio1" name="gender">Male</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="gender" id="inline_Radio2" value="1" required="">
+                                                <label class="form-check-label" for="inlineRadio2" name="gender">Female</label>
+                                            </div>
+                                        </div>
+                                        {{-- <input type="text" class="form-control" placeholder="Enter gender" name="gender" value="{{ $memberData->gender }}" required />
                                         <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please fill out this
-                                        field.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div> --}}
                                     </div>
-                                    
+                        
                                     <div class="mb-3 mt-3">
                                         <label for="caregiversname" class="d-flex form-label">Caregiver's Name:</label>
-                                        <input type="text" class="form-control"
-                                        placeholder="Write N/A if none" name="" 
-                                        required="true" />
+                                        <input type="text" class="form-control" placeholder="Write N/A if none" name="member_caregiver_name" value="{{ $memberData->member_caregiver_name }}" required />
                                         <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please fill out this
-                                        field.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
-
+                        
                                     <div class="mb-3 mt-3">
                                         <label for="address" class="d-flex form-label">Address:</label>
-                                        <input type="text" class="form-control"
-                                        placeholder="Enter your address" name="" 
-                                        required="true" />
+                                        <input type="text" class="form-control" placeholder="Enter your address" name="address" value="{{ $userData->address }}" required />
                                         <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please fill out this
-                                        field.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
-
+                        
                                     <div class="mb-3 mt-3">
                                         <label for="email" class="d-flex form-label">Email:</label>
-                                        <input type="text" class="form-control"
-                                        placeholder="Enter email" name=""
-                                        required="true" />
+                                        <input type="text" class="form-control" placeholder="Enter email" name="email" value="{{ $userData->email }}" required />
                                         <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please fill out this
-                                        field.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
-    
+                        
                                     <div class="mb-3">
                                         <label for="number" class="d-flex form-label">Phone Number:</label>
-                                        <input type="text" class="form-control"
-                                        placeholder="Enter phone number" name=""
-                                        required="true" />
+                                        <input type="text" class="form-control" placeholder="Enter phone number" name="phone" value="{{ $userData->phone }}" required />
                                         <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please fill out this
-                                        field.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
-    
-                                    {{-- <div class="mb-3">
-                                        <label class="d-flex form-label">Upload Profile Photo:</label> 
-                                        <input type="file" class="form-control" name=""
-                                        required="true" />
-                                        <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please fill out this
-                                        field.</div>
-                                    </div> --}}
                                 </div>
-                                        
                             </div>
-
+                        
                             <div class="d-flex justify-content-center pb-2">
-								<button type="submit" class="btn btn-outline-dark">Edit</button>
-							</div>
+                                <button type="submit" class="btn btn-outline-dark">Save</button>
+                            </div>
                         </form>
                         
                         <div class="modal-footer">
@@ -182,6 +161,11 @@
                         <div class="row pb-3 pt-3">
                             <div class="col-4" style="font-weight: 900">ADDRESS:</div>
                             <div class="col-8">{{ $userData->address }}</div>
+                        </div>
+                        <hr>
+                        <div class="row pb-3 pt-3">
+                            <div class="col-4" style="font-weight: 900">EMAIL:</div>
+                            <div class="col-8">{{ $userData->email }}</div>
                         </div>
                         <hr>
                         <div class="row pb-1 pt-3">

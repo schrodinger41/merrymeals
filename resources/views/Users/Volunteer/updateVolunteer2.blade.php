@@ -39,7 +39,7 @@
 						<div class="modal-header align-items-center justify-content-center">
 							<h5 class="modal-title text-center" id="exampleModalLabel"> <b> EDIT PROFILE </b> </h5>
 						</div>
-						<form action="{{ route('partner#saveMenu') }}" method="POST" enctype="multipart/form-data">
+						<form action="" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="modal-body">
                                 <!-- FORM -->
@@ -47,7 +47,7 @@
                                     <div class="mb-3 mt-3">
                                         <label for="name" class="d-flex form-label">Name:</label>
                                         <input type="text" class="form-control"
-                                        placeholder="Enter full name" name=""
+                                        placeholder="Enter full name" name="name"
                                         required="true" />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this
@@ -57,7 +57,7 @@
                                     <div class="mb-3 mt-3">
                                         <label for="age" class="d-flex form-label">Age:</label>
                                         <input type="text" class="form-control"
-                                        placeholder="Enter age" name=""
+                                        placeholder="Enter age" name="age"
                                         required="true" />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this
@@ -66,18 +66,35 @@
 
                                     <div class="mb-3 mt-3">
                                         <label for="gender" class="d-flex form-label">Gender:</label>
-                                        <input type="text" class="form-control"
-                                        placeholder="Enter gender" name=""
-                                        required="true" />
-                                        <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please fill out this
-                                        field.</div>
+                                        <div class="col-sm-8">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="gender" id="inline_Radio1" value="0" required="">
+                                                <label class="form-check-label" for="inlineRadio1" name="gender">Male</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="gender" id="inline_Radio2" value="1" required="">
+                                                <label class="form-check-label" for="inlineRadio2" name="gender">Female</label>
+                                            </div>
+                                        </div>
                                     </div>
                                     
                                     <div class="mb-3 mt-3">
-                                        <label for="caregiversname" class="d-flex form-label">Caregiver's Name:</label>
+                                        <label for="caregiversname" class="d-flex form-label"></label>Volunteer Vaccination Status: </label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="volunteer_vaccination" id="inlineRadio1" value="0">
+                                            <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="volunteer_vaccination" id="inlineRadio2" value="1">
+                                            <label class="form-check-label" for="inlineRadio2">No</label>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="mb-3 mt-3">
+                                        <label for="address" class="d-flex form-label">Volunteer Duration:</label>
                                         <input type="text" class="form-control"
-                                        placeholder="Write N/A if none" name="" 
+                                        placeholder="Enter volunteer duration" name="volunteer_duration" 
                                         required="true" />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this
@@ -85,19 +102,41 @@
                                     </div>
 
                                     <div class="mb-3 mt-3">
-                                        <label for="address" class="d-flex form-label">Address:</label>
-                                        <input type="text" class="form-control"
-                                        placeholder="Enter your address" name="" 
-                                        required="true" />
-                                        <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please fill out this
-                                        field.</div>
+                                        <label for="address" class="d-flex form-label">Available day:</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="volunteer_available[]" value="Monday" type="checkbox">
+                                            <label class="form-check-label" for="inlineCheckbox1">Monday</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="volunteer_available[]" value="Tuesday" type="checkbox">
+                                            <label class="form-check-label" for="inlineCheckbox2">Tuesday</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="volunteer_available[]" value="Wednesday" type="checkbox">
+                                            <label class="form-check-label" for="inlineCheckbox3">Wednesday</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="volunteer_available[]" value="Thursday" type="checkbox">
+                                            <label class="form-check-label" for="inlineCheckbox4">Thursday</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="volunteer_available[]" value="Friday" type="checkbox">
+                                            <label class="form-check-label" for="inlineCheckbox5">Friday</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="volunteer_available[]" value="Saturday" type="checkbox">
+                                            <label class="form-check-label" for="inlineCheckbox6">Saturday</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="volunteer_available[]" value="Sunday" type="checkbox">
+                                            <label class="form-check-label" for="inlineCheckbox7">Sunday</label>
+                                        </div>
                                     </div>
 
                                     <div class="mb-3 mt-3">
                                         <label for="email" class="d-flex form-label">Email:</label>
                                         <input type="text" class="form-control"
-                                        placeholder="Enter email" name=""
+                                        placeholder="Enter email" name="email"
                                         required="true" />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this
@@ -107,7 +146,7 @@
                                     <div class="mb-3">
                                         <label for="number" class="d-flex form-label">Phone Number:</label>
                                         <input type="text" class="form-control"
-                                        placeholder="Enter phone number" name=""
+                                        placeholder="Enter phone number" name="phone"
                                         required="true" />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this
@@ -127,7 +166,7 @@
                             </div>
 
                             <div class="d-flex justify-content-center pb-2">
-								<button type="submit" class="btn btn-outline-dark">Edit</button>
+								<button type="submit" class="btn btn-outline-dark">Save</button>
 							</div>
                         </form>
                         

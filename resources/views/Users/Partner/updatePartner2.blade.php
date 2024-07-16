@@ -35,9 +35,8 @@
                         <div class="modal-header align-items-center justify-content-center">
                             <h5 class="modal-title text-center" id="exampleModalLabel"> <b> EDIT PROFILE </b> </h5>
                         </div>
-                        <form action="{{ route('partner.updateProfile', $userData->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('partner.updateProfilePost', $userData->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            @method('PUT')
                             <div class="modal-body">
                                 <!-- FORM -->
                                 <div class="was-validated">
@@ -47,14 +46,14 @@
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
-
+                        
                                     <div class="mb-3 mt-3">
                                         <label for="businessname" class="d-flex form-label">Business Name:</label>
                                         <input type="text" class="form-control" placeholder="Enter the name of your business or company" name="partnership_restaurant" value="{{ $partnerData->partnership_restaurant }}" required />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
-
+                        
                                     <div class="mb-3 mt-3">
                                         <label for="duration" class="d-flex form-label">Partnership Duration:</label>
                                         <input type="text" class="form-control" placeholder="Enter the duration of your partnership" name="partnership_duration" value="{{ $partnerData->partnership_duration }}" required />
@@ -64,41 +63,32 @@
                                     
                                     <div class="mb-3 mt-3">
                                         <label for="address" class="d-flex form-label">Address:</label>
-                                        <input type="text" class="form-control" placeholder="Enter your address" name="address" value="{{ $partnerData->partnership_address }}" required />
+                                        <input type="text" class="form-control" placeholder="Enter your address" name="address" value="{{ $partnerData->partnership_address }}" />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
-
+                        
                                     <div class="mb-3 mt-3">
                                         <label for="email" class="d-flex form-label">Email:</label>
                                         <input type="text" class="form-control" placeholder="Enter email" name="email" value="{{ $userData->email }}" required />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
-
+                        
                                     <div class="mb-3">
                                         <label for="number" class="d-flex form-label">Phone Number:</label>
                                         <input type="text" class="form-control" placeholder="Enter phone number" name="phone" value="{{ $userData->phone }}" required />
                                         <div class="valid-feedback">Valid.</div>
                                         <div class="invalid-feedback">Please fill out this field.</div>
                                     </div>
-
-                                    {{-- <div class="mb-3">
-                                        <label class="d-flex form-label">Upload Profile Photo:</label> 
-                                        <input type="file" class="form-control" name=""
-                                        required="true" />
-                                        <div class="valid-feedback">Valid.</div>
-                                        <div class="invalid-feedback">Please fill out this
-                                        field.</div>
-                                    </div> --}}
                                 </div>
-                                    
                             </div>
-
+                        
                             <div class="d-flex justify-content-center pb-2">
-                                <button type="submit" class="btn btn-outline-dark">Edit</button>&nbsp;
+                                <button type="submit" class="btn btn-outline-dark">Save</button>&nbsp;
                             </div>
                         </form>
+                        
                         
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

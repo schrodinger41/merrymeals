@@ -208,4 +208,34 @@ class PartnerController extends Controller
 
         return view('Users.Partner.updatePartner2')->with(['partnerData' => $partnerData, 'userData' => $userData, ]);
     }
+
+    public function updateProfilePost(Request $request, $user_id)
+    {
+        // Validate the incoming request data
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'partnership_restaurant' => 'required|string|max:255',
+            'partnership_duration' => 'required|string|max:255',
+            'address' => 'nullable|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'phone' => 'required|string|max:20',
+        ]);
+    
+        // Update user data
+        $user = User::find($user_id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->phone = $request->input('phone');
+        $user->save();
+    
+        // Update partner data
+        $partner = Partner::where('user_id', $user_id)->first();
+        $partner->partnership_restaurant = $request->input('partnership_restaurant');
+        $partner->partnership_duration = $request->input('partnership_duration');
+        $partner->partnership_address = $request->input('address');
+        $partner->save();
+    
+        return redirect()->route('partner#updateProfile', $user_id)->with('success', 'Profile updated successfully!');
+    }
+    
 }

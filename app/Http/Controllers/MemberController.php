@@ -196,4 +196,37 @@ class MemberController extends Controller
 
         return $arr;
     }
+
+    public function updateProfilePost(Request $request, $user_id)
+{
+    // Validate the incoming request data
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'age' => 'required|integer',
+        'gender' => 'required|string|max:255',
+        'member_caregiver_name' => 'required|string|max:255',
+        'address' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255',
+        'phone' => 'required|string|max:20',
+    ]);
+
+    // Update user data
+    $user = User::find($user_id);
+    $user->name = $request->input('name');
+    $user->email = $request->input('email');
+    $user->phone = $request->input('phone');
+    $user->address = $request->input('address');
+    $user->age = $request->input('age');
+    
+    $user->gender = $request->input('gender');
+    $user->save();
+
+    // Update member data
+    $member = Member::where('user_id', $user_id)->first();  
+    $member->member_caregiver_name = $request->input('member_caregiver_name');
+    $member->save();
+
+    return redirect()->route('member#updateProfile', $user_id)->with('success', 'Profile updated successfully!');
+}
+
 }
