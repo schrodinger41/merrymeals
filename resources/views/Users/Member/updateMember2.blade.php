@@ -32,12 +32,12 @@
 		    <div class="modal fade" id="exampleModal" tabindex="-1"
 			aria-labelledby="exampleModalLabel" aria-hidden="true"
 			role="dialog">
-				<div class="modal-dialog">
+				<div class="modal-dialog" style="margin-top: 120px">
 					<div class="modal-content" style="background-color: var(--accent-color); color: rgb(31, 31, 31);">
                         
                        
 						<div class="modal-header align-items-center justify-content-center">
-							<h5 class="modal-title text-center" id="exampleModalLabel"> <b> EDIT PROFILE </b> </h5>
+							<h5 class="modal-title text-center" id="exampleModalLabel" style="font-size: var(--h3-font-size);font-weight: 900"> <b> EDIT PROFILE </b> </h5>
 						</div>
 						<form action="{{ route('partner#saveMenu') }}" method="POST" enctype="multipart/form-data">
                             @csrf
@@ -45,7 +45,7 @@
                                 <!-- FORM -->
                                 <div class="was-validated">
                                     <div class="mb-3 mt-3">
-                                        <label for="name" class="d-flex form-label">Name:</label>
+                                        <label for="name" class="d-flex form-label" style="font-weight: 900;">Name:</label>
                                         <input type="text" class="form-control"
                                         placeholder="Enter full name" name=""
                                         required="true" />
@@ -55,7 +55,7 @@
                                     </div>
 
                                     <div class="mb-3 mt-3">
-                                        <label for="age" class="d-flex form-label">Age:</label>
+                                        <label for="age" class="d-flex form-label" style="font-weight: 900;">Age:</label>
                                         <input type="text" class="form-control"
                                         placeholder="Enter age" name=""
                                         required="true" />
@@ -65,7 +65,7 @@
                                     </div>
 
                                     <div class="mb-3 mt-3">
-                                        <label for="gender" class="d-flex form-label">Gender:</label>
+                                        <label for="gender" class="d-flex form-label" style="font-weight: 900;">Gender:</label>
                                         <input type="text" class="form-control"
                                         placeholder="Enter gender" name=""
                                         required="true" />
@@ -75,7 +75,7 @@
                                     </div>
                                     
                                     <div class="mb-3 mt-3">
-                                        <label for="caregiversname" class="d-flex form-label">Caregiver's Name:</label>
+                                        <label for="caregiversname" class="d-flex form-label" style="font-weight: 900;">Caregiver's Name:</label>
                                         <input type="text" class="form-control"
                                         placeholder="Write N/A if none" name="" 
                                         required="true" />
@@ -85,7 +85,7 @@
                                     </div>
 
                                     <div class="mb-3 mt-3">
-                                        <label for="address" class="d-flex form-label">Address:</label>
+                                        <label for="address" class="d-flex form-label" style="font-weight: 900;">Address:</label>
                                         <input type="text" class="form-control"
                                         placeholder="Enter your address" name="" 
                                         required="true" />
@@ -95,7 +95,7 @@
                                     </div>
 
                                     <div class="mb-3 mt-3">
-                                        <label for="email" class="d-flex form-label">Email:</label>
+                                        <label for="email" class="d-flex form-label" style="font-weight: 900;">Email:</label>
                                         <input type="text" class="form-control"
                                         placeholder="Enter email" name=""
                                         required="true" />
@@ -105,7 +105,7 @@
                                     </div>
     
                                     <div class="mb-3">
-                                        <label for="number" class="d-flex form-label">Phone Number:</label>
+                                        <label for="number" class="d-flex form-label" style="font-weight: 900;">Phone Number:</label>
                                         <input type="text" class="form-control"
                                         placeholder="Enter phone number" name=""
                                         required="true" />
@@ -127,7 +127,7 @@
                             </div>
 
                             <div class="d-flex justify-content-center pb-2">
-								<button type="submit" class="btn btn-outline-dark">Edit</button>
+								<button type="submit" class="btn btn-outline-dark" style="font-weight: 900;">Edit</button>
 							</div>
                         </form>
                         
