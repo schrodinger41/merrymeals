@@ -30,7 +30,7 @@
 
              <!-- MODAL -->
              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
-                <div class="modal-dialog">
+                <div class="modal-dialog" style="margin-top: 120px">
                     <div class="modal-content" style="background-color: var(--accent-color); color: rgb(31, 31, 31);">
                         <div class="modal-header align-items-center justify-content-center">
                             <h5 class="modal-title text-center" id="exampleModalLabel"> <b> EDIT PROFILE </b> </h5>
