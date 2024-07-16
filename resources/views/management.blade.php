@@ -368,7 +368,6 @@
                                     <!-- VOLUNTEER -->
                                     <div class="mb-3 mt-3 volunteer box">
                                         <label for="caregiversname" class="d-flex form-label" style="font-weight: 900;">Are you vaccinated?</label>
-                                        <br>
                                         <select class="form-select" name="volunteer_vaccination" id="" style="width: 100%" required>
                                             <option value="">PLEASE SELECT</option>
                                             <option value="0"> YES </option>
