@@ -65,7 +65,6 @@ Route::middleware([
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     if (Auth::check()) {
-
         if (Auth::user()->role == 'member') {
             return redirect()->route('member#index');
         } else if (Auth::user()->role == 'partner') {
@@ -93,6 +92,8 @@ Route::group(['prefix' => 'member'], function () {
     Route::get('/updateProfile/{id}', [MemberController::class, 'updateProfile'])->name('member#updateProfile');
     Route::get('/reassesment/{id}', [MemberController::class, 'reassesment'])->name('member#reassesment');
     Route::post('/newReassesment//{id}', [MemberController::class, 'newReassesment'])->name('member#newReassesment');
+    Route::post('/member/updateProfile/{id}', [MemberController::class, 'updateProfilePost'])->name('member.updateProfilePost');
+
 });
 
 
@@ -109,6 +110,8 @@ Route::group(['prefix' => 'partner'], function () {
     Route::get('/AllOrderForPartner/{id}', [OrderController::class, 'AllOrderForPartner'])->name('order#AllOrderForPartner');
     Route::get('/updateOrder/{id}', [OrderController::class, 'updateOrder'])->name('order#updateOrder');
     Route::get('/updateProfile/{id}', [PartnerController::class, 'updateProfile'])->name('partner#updateProfile');
+    Route::post('/partner/updateProfile/{id}', [PartnerController::class, 'updateProfilePost'])->name('partner.updateProfilePost');
+
 });
 
 
@@ -118,10 +121,9 @@ Route::group(['prefix' => 'volunteer'], function () {
     Route::get('/viewAllMenu', [VolunteerController::class, 'viewAllMenu'])->name('volunteer#viewAllMenu');
     Route::get('/updateDelivery/{id}', [DeliverController::class, 'updateDelivery'])->name('delivery#updateDelivery');
     Route::get('/AllDeliveryForVolunteer', [DeliverController::class, 'AllDeliveryForVolunteer'])->name('deliver#AllDeliveryForVolunteer');
-    Route::get('/updateDelivery/{id}', [DeliverController::class, 'updateDelivery'])->name('deliver#updateDelivery');
     Route::get('/updateProfile/{id}', [VolunteerController::class, 'updateProfile'])->name('volunteer#updateProfile');
-    Route::put('partner/updateProfile/{id}', [PartnerController::class, 'updateProfile'])->name('partner.updateProfile');
 });
+
 
 
 //Administrator

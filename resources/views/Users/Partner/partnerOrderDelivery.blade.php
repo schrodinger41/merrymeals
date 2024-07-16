@@ -33,7 +33,7 @@
                     <div class="col-md-12 offset-md-0">
                         <div class="mt-5 p-4">
                             <h1 class="text-secondary text-center pt-2 mb-5 display-5" style="font-weight:900;">
-                                Order Status - Partner
+                                Order Status - <span style="color: var(--primary-color)">Partner</span>
                             </h1>
                             <div class="row">
                                 <table class="table table-hover table-responsive">
