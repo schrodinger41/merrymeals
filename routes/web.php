@@ -59,6 +59,9 @@ Route::middleware([
     Route::get('/management', function () {
         return view('management');
     })->name('management');
+    Route::get('/members-menu', function () {
+        return view('Users/Member/memberMenu');
+    })->name('members-menu');
 });
 
 
@@ -122,7 +125,9 @@ Route::group(['prefix' => 'volunteer'], function () {
     Route::get('/updateDelivery/{id}', [DeliverController::class, 'updateDelivery'])->name('delivery#updateDelivery');
     Route::get('/AllDeliveryForVolunteer', [DeliverController::class, 'AllDeliveryForVolunteer'])->name('deliver#AllDeliveryForVolunteer');
     Route::get('/updateProfile/{id}', [VolunteerController::class, 'updateProfile'])->name('volunteer#updateProfile');
+    Route::post('/updateProfile/{id}', [VolunteerController::class, 'saveProfile'])->name('volunteer#saveProfile'); // POST route for updating profile
 });
+
 
 
 
