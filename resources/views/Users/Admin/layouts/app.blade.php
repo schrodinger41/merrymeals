@@ -39,8 +39,11 @@
             
             <div class="user-info">
                 <li class="list-item"><a href="{{ route('admin#index') }}">Home</a></li>
+                
+                <li class="list-item"><a href="{{ route('admin#allMenus') }}">Manage Menus</a></li>
+                <li class="list-item"><a href="{{ route('admin#allDeliveries') }}">Manage Deliveries</a></li>
                 <div class="dropdowns">
-                    <button class="dropdown-toggles">Manage Users▼</button>
+                    <button class="list-item dropdown-toggles">Manage Users</button>
                     <div class="dropdown-menus">
                         <a href="{{ route('admin#allMembers') }}">Member and Care Giver</a>
                         <a href="{{ route('admin#allPartners') }}">Partners</a>
@@ -48,23 +51,19 @@
                         <a href="{{ route('admin#allDonors') }}">Donors</a>
                     </div>
                 </div>
-                <li class="list-item"><a href="{{ route('admin#allMenus') }}">Manage Menus</a></li>
-                <li class="list-item"><a href="{{ route('admin#allDeliveries') }}">Manage Deliveries</a></li>
                 
                 
                 @if (Route::has('login'))
                     <div class="dropdowns">
-                        <button class="dropdown-toggles"><div class="user-name">{{ Auth()->user()->name }}▼</button>
+                        <button class="dropdown-toggles"><div class="user-name">{{ Auth()->user()->name }}</div></button>
                         <div class="dropdown-menus">
-                            @auth
-                                <a href="{{ url('/dashboard') }}">Dashboard</a>
-                    
-                            @else
-                                <a href="{{ route('login') }}">Log in</a>
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}">Register</a>
-                                @endif
-                            @endauth
+                            
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <a>
+                                    <button type="submit"  style="color: white;" > Logout </button>
+                                </a>
+                            </form>
                         </div>
                     </div>
                 @endif
