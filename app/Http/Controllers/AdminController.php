@@ -110,7 +110,7 @@ class AdminController extends Controller
 
         $newImageFile = $request->file('menu_image');
         $newImageName = uniqid() . '_' . $newImageFile->getClientOriginalName();
-        $newImageFile->move(public_path() . './uploads/meal/', $newImageName);
+        $newImageFile->move(public_path('./uploads/meal/')  , $newImageName);
 
         $updateData['menu_image'] = $newImageName;
 
