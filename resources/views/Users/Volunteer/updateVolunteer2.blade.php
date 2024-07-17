@@ -88,9 +88,7 @@
                         
                                     <div class="mb-3 mt-3">
                                         <label for="volunteer_available" class="d-flex form-label" style="font-weight: 900">Available day:</label>
-                                        @php
-                                            $availableDays = json_decode($volunteerData->volunteer_available, true) ?? [];
-                                        @endphp
+                                        {{ $volunteerData-> volunteer_available  }}
                                         <div>
                                             <label><input type="checkbox" name="volunteer_available[]" value="Monday" {{ in_array('Monday', $availableDays) ? 'checked' : '' }}> Monday</label>
                                             <label><input type="checkbox" name="volunteer_available[]" value="Tuesday" {{ in_array('Tuesday', $availableDays) ? 'checked' : '' }}> Tuesday</label>
