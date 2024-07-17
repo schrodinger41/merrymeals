@@ -25,9 +25,10 @@
         }
 
         .heading-section h3 {
-            font-size: 2em;
+            font-size: var(--h1-font-size);
             margin: 0;
-            color: #333;
+            color: var(--primary-color);
+            font-weight: var(--weight-700);
         }
 
         .heading-section p {
@@ -99,12 +100,12 @@
     @endsection
 
     @section('content')
-    <div id="fh5co-services-section" style="margin-top: 200px">
+    <div id="fh5co-services-section" style="margin-top: 150px">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-                    <h3>Hello The Administrator</h3>
-                    <p>Please manage this website!!!</p>
+                    <h3>Welcome, Administrator</h3>
+                    <p>Please manage this website.</p>
                 </div>
             </div>
         </div>
