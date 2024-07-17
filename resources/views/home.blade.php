@@ -11,6 +11,7 @@
     <!-- CSS -->
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -27,7 +28,7 @@
             <div class="slideshow-container">
 
                 <!-- Full-width images with number and caption text -->
-                <div class="mySlides fade">               
+                <div class="mySlides fade">
                     <img src="{{ asset('images/img1.jpg') }}">
                     <div class="text">Provide <span style="color: var(--secondary-color);">Healthy</span> Meals</div>
                 </div>
@@ -91,7 +92,8 @@
 
             <div class="volunteer-section">
                 <h2 class="volunteer-title">Our Volunteers</h2>
-                <p class="volunteer-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                <p class="volunteer-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore
                     et dolore magna aliqua. Quam nulla porttitor massa id neque aliquam vestibulum.
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Quam nulla porttitor massa id neque aliquam vestibulum.
@@ -99,7 +101,8 @@
                 <div class="volunteer-testimonials">
                     <div class="volunteer-testimonial">
                         <img src="{{ asset('images/img6.jpg') }}" alt="Volunteer 1">
-                        <blockquote>“meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow 
+                        <blockquote>“meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow
+                            meow meow meow meow
                             meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow ”</blockquote>
                         <p class="volunteer-name">Luna Moon, CAT Co.</p>
                     </div>
@@ -110,7 +113,8 @@
                     </div>
                     <div class="volunteer-testimonial">
                         <img src="{{ asset('images/img8.jpg') }}" alt="Volunteer 3">
-                        <blockquote>“bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw 
+                        <blockquote>“bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw
+                            bawaw bawaw bawaw bawaw
                             bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw bawaw ”</blockquote>
                         <p class="volunteer-name">Cara Girl, DOG Co.</p>
                     </div>
@@ -120,7 +124,6 @@
         </main>
 
         <script src="{{ asset('js/home.js') }}"></script>
-
     @endsection
 
 </body>
