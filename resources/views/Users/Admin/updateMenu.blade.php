@@ -16,6 +16,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Management</title>
+
+	<style>
+		.fixed-size-textarea {
+				width: 100%;
+				height: 200px;
+				resize: none;
+				border-color: black
+		}
+		.description-area{
+			border-color: black!important;
+			border-width: 1px!important;
+			border-radius: 0.25rem!important;
+		}
+
+		.update {
+			color: var(--primary-color);
+		}
+	</style>
 </head>
 
 <body>
