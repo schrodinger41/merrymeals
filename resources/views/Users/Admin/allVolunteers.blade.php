@@ -79,10 +79,10 @@
                                     <a type="button" class="btn" style="color: var(-primary-color);" href=""> <i class="far fa-eye"></i> </a>  --}}
                                     
                                     <!-- Button trigger modal for EDIT -->
-									<button type="button" class="btn" style="color: var(-primary-color);"
+									<a type="button" class="btn" style="color: var(-primary-color);"
                                     href="{{ route('admin#updateVolunteer', $volunteer->user_id) }}">
 										<i class="fas fa-edit"></i>
-									</button>
+									</a>
 					</div>
 				</div>
             </div>

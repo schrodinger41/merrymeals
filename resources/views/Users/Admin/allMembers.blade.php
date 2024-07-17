@@ -74,10 +74,10 @@
                 <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ DB::table('users')->where('id',$member->user_id)->value('address')}}</td>
                 <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ DB::table('users')->where('id',$member->user_id)->value('email')}}</td>
 								<td class="text-center" scope="row" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">
-									<button type="button" class="btn" style="color: var(-primary-color);"
+									<a type="button" class="btn" style="color: var(-primary-color);"
                                     href="{{ route('admin#updateMembers', $member->user_id) }}">
 										<i class="fas fa-edit"></i>
-									</button>
+									</a>
 					</div>
 				</div>
             </div>             
