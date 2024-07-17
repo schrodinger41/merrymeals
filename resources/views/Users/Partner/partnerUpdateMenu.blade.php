@@ -50,9 +50,7 @@
 												<h3 class="card-title text-center" style="font-weight: 900; font-size: var(--h2-font-size);"><span class="update">Update</span> Menu</h3>
 												<form action="{{ route('partner#saveUpdate', $updateMenu->id) }}" method="POST" enctype="multipart/form-data">
 														@csrf
-														@if ($updateMenu->menu_image)
-												
-														@endif
+														
 														<div class="mb-3">
 																<label for="menu_title" class="form-label" style="font-weight: 900;">Menu Title</label>
 																<input type="text" style="font-weight: 600;" class="form-control" id="menu_title" name="menu_title" placeholder="Put your menu title here" value="{{ old('menu_title', $updateMenu->menu_title) }}" required>
@@ -78,7 +76,7 @@
 				</div>
 		</div>
 
-		</div>
+		
         
     @endsection
 
