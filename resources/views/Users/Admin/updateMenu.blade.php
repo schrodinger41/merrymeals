@@ -46,85 +46,42 @@
 <!-- Modernizr JS -->
 <script src="{{ asset('js/modernizr-2.6.2.min.js') }}" defer></script>
 
-		<div id="fh5co-blog-section" class="fh5co-section-gray">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-					<h3><h1>Update {{ $updateMenu->menu_title }}</h1></h3>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row row-bottom-padded-md">
-                    <div class="container">
-                        <div class="row">
-							<form action="{{ route('admin#saveUpdateMenu', $updateMenu->id) }}" method="POST" enctype="multipart/form-data">
-								@csrf
-								<div class="col-lg-6 animate-box">
-									@if ($updateMenu->menu_image)
-										<img src="{{ asset('uploads/meal/'. $updateMenu->menu_image) }}" class="img-thumbnail" alt="category image ">
-										<br>
-									@endif
-									<div>
-										<div class="form-group animate-box" style="padding-top: 10px">
-											<label for="basic-url">Menu Picture</label>
-											<input type="file" class="form-control" name="menu_image" value="{{old('menu_image', $updateMenu->menu_image) }}" required>
-										</div>
+
+
+<div style="margin-top: 150px; min-height: 60vh;">
+	<div class="container mt-5 mb-5">
+			<div class="row justify-content-center">
+					<div class="col-md-6">
+							<div class="card">
+									<div class="card-body">
+											<h3 class="card-title text-center" style="font-weight: 900; font-size: var(--h2-font-size);">
+													<span class="update">Update</span> Menu
+											</h3>
+											<form action="{{ route('admin#saveUpdateMenu', $updateMenu->id) }}" method="POST" enctype="multipart/form-data">
+													@csrf
+													<div class="mb-3">
+															<label for="menu_title" class="form-label" style="font-weight: 900;">Menu Title</label>
+															<input type="text" style="font-weight: 600;" class="form-control" id="menu_title" name="menu_title" placeholder="Put your menu title here" value="{{ old('menu_title', $updateMenu->menu_title) }}" required>
+													</div>
+													<div class="mb-3">
+															<label for="menu_description" class="form-label" style="font-weight: 900;">Menu Description</label>
+															<textarea class="form-control fixed-size-textarea" style="font-weight: 600;" id="menu_description" name="menu_description" placeholder="Put your menu description here" required>{{ old('menu_description', $updateMenu->menu_description) }}</textarea>
+													</div>
+													<div class="mb-3">
+															<label for="menu_image" class="form-label" style="font-weight: 900;">Menu Picture</label>
+															<input type="file" style="font-weight: 600; padding-left:5px;" class="form-control description-area" id="menu_image" name="menu_image" value="{{ old('menu_image', $updateMenu->menu_image) }}" required>
+													</div>
+													<input type="hidden" name="partner" value="{{ $updateMenu->partner_id }}" required>
+													<div class="text-end">
+															<button type="button" style="font-weight: 700;" class="btn btn-secondary" onclick="history.back()">Cancel</button>
+															<button type="submit" style="font-weight: 700;" class="btn btn-success me-2">Save</button>
+													</div>
+											</form>
 									</div>
-								</div>
-								<div class="col-lg-6" style="padding-left: 60px">
-									<div class="row">
-										<div>
-											<div class="form-group animate-box">
-												<label for="basic-url">Menu Title</label>
-												<input type="text" class="form-control" placeholder="Put your menu title here" name="menu_title" value="{{ old('menu_title', $updateMenu->menu_title) }}" required>
-											</div>
-										</div>
-										<div>
-											<div class="form-group animate-box">
-												<label for="basic-url">Menu Description</label>
-												<textarea class="form-control" id="" cols="30" rows="7" placeholder="Put your menu description here" name="menu_description" required>{{ old('menu_description', $updateMenu->menu_description) }}</textarea>
-											</div>
-										</div>
-										
-										<div>
-											<div class="form-group animate-box">
-												{{-- <label for="basic-url">Partner Organization</label> --}}
-                                                <input type="hidden" class="form-control" placeholder="Put your partner name here" name="partner" value="{{ $updateMenu->partner_id }}" required>
-											</div>
-										</div>
-										<div>
-											<div class="form-group animate-box">
-												<input type="submit" value="Update" class="btn btn-primary">
-											</div>
-										</div>
-									</div>
-								</div>
-							</form>
-                        </div>
-                    </div>
-				</div>
+							</div>
+					</div>
 			</div>
-		</div>
-		<!-- fh5co-blog-section -->
-
-	<!-- jQuery -->
-
-
-	<script src="{{ asset('js/jquery.min.js') }}" defer></script>
-	<!-- jQuery Easing -->
-	<script src="{{ asset('js/jquery.easing.1.3.js') }}" defer></script>
-	<!-- Bootstrap -->
-	<script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
-	<!-- Waypoints -->
-	<script src="{{ asset('js/jquery.waypoints.min.js') }}" defer></script>
-	<script src="{{ asset('js/sticky.js') }}"></script>
-
-	<!-- Stellar -->
-	<script src="{{ asset('js/jquery.stellar.min.js') }}" defer></script>
-	<!-- Superfish -->
-	<script src="{{ asset('js/hoverIntent.js') }}" defer></script>
-	<script src="{{ asset('js/superfish.js') }}" defer></script>
-
-	<!-- Main JS -->
-	<script src="{{ asset('js/main.js') }}" defer></script>
+	</div>
+</div>
 
 @endsection

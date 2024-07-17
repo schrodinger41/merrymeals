@@ -48,6 +48,11 @@
 			<div class="col-12">
 				<h3 style="font-weight: var(--weight-700); color: var(--primary-color); font-size: var(--h1-font-size)"> MEMBER MANAGEMENT </h3>
                 <hr>
+                @if (Session::has('memberDeleted'))
+                    <h4 class="alert alert-warning animate-box" role="alert">
+                        {{ Session::get('memberDeleted') }}
+                    </h4>
+                @endif
 			</div>
 		</div>
 
