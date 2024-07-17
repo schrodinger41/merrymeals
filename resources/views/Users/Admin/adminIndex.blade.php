@@ -76,9 +76,10 @@
             animation: fadeInUp 1s ease-out;
         }
 
+
         @keyframes fadeInUp {
             from {
-                opacity: 0;
+                opacity: 1;
                 transform: translate3d(0, 40px, 0);
             }
 
@@ -114,7 +115,7 @@
             <div class="fh5co-overlay"></div>
             <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5">
                 <div class="desc animate-box">
-                    <h2><strong>Aim to</strong> Give Meals <strong> To Those in Need</strong></h2>
+                    <h2 ><strong>Aim to</strong> Give Meals <strong> To Those in Need</strong></h2>
                 </div>
             </div>
         </div>
