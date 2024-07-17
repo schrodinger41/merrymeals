@@ -28,71 +28,79 @@
 
 @section('content')
 		
-		<div id="fh5co-services-section">
+		<div id="fh5co-services-section" style="margin-top: 120px; margin-bottom: 30px">
+
+            <div class="row p-3 mt-3 mb-5 container">
+			    <div class="col-12">
+				    <h3 style="font-weight: var(--weight-700); color: var(--primary-color)"> EDIT MEMBER DETAILS </h3>
+                    <hr>
+			    </div>
+		    </div>
+
             @if (Session::has('dataInform'))
                 <h4 class="alert alert-warning animate-box text-center" role="alert">
                     {{ Session::get('dataInform') }}
                 </h4>
             @endif
 			<div class="container">
-				<div class="row display-flex justify-content">
-					<div class="col-md-6 col-sm-6 col-md-offset-3">
-						<div class=" animate-box">
-							<div class="col-md-12 ">
-                                <h3>General Information</h3>
+				<div class="row">
+					<div class="d-flex justify-content-around" style="color: var(--primary-color); font-weight: 600;">
+						<div class=" animate-box" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 45%">
+							<div class="p-5">
+                                <h3 class="text-center pb-3" style="font-size: var(--h3-font-size);font-weight: 900; color: var(--primary-color)">GENERAL INFORMATION</h3>
                                 <form action="{{ route('admin#userUpdated', $userData->id) }}" method="POST">
                                     @csrf
                                     <label class="userManagement">Name</label><br>
-                                    <input name="name" class="input-md col-md-12" type="text" required="required" value="{{ old('name', $userData->name) }}"/>
+                                    <input name="name" class="input-md col-md-12" type="text" required="required" value="{{ old('name', $userData->name) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/>
 
                                     {{-- <label class="userManagement">Gender</label><br> --}}
-                                    <input name='gender' class="input-md col-md-12" type="hidden" required="required" value="{{ old('gender', $userData->gender) }}"/><br><br>
+                                    <input name='gender' class="input-md col-md-12" type="hidden" required="required" value="{{ old('gender', $userData->gender) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
 
                                     <label class="userManagement">Age</label><br>
-                                    <input name="age" required="required" class="input-md col-md-12" type="text" value="{{ old('age', $userData->age) }}"/><br><br>
+                                    <input name="age" required="required" class="input-md col-md-12" type="text" value="{{ old('age', $userData->age) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
 
                                     <label class="userManagement">Contact</label><br>
-                                    <input name='phone' required="required" class="input-md col-md-12" type="text" value="{{ old('phone', $userData->phone) }}"/><br><br>
+                                    <input name='phone' required="required" class="input-md col-md-12" type="text" value="{{ old('phone', $userData->phone) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
 
                                     <label class="userManagement">Address</label><br>
-                                    <input name="address" required="required" class="input-md col-md-12" type="text" value="{{ old('address', $userData->address) }}"/><br><br>
+                                    <input name="address" required="required" class="input-md col-md-12" type="text" value="{{ old('address', $userData->address) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
 
 									<label class="userManagement">Email</label><br>
-                                    <input name='email' required="required" class="input-md col-md-12" type="text" value="{{ old('email', $userData->email) }}"/><br><br>
+                                    <input name='email' required="required" class="input-md col-md-12" type="text" value="{{ old('email', $userData->email) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
 
-                                    <div class="text-center"> 
-                                        <button class="btn-primary">Update</button> &nbsp;
-                                        <a href="{{ route('admin#allMembers') }}">Cancel</a>
+                                    <div class="text-center pt-2"> 
+                                        <button class="btn btn-outline-success">Update</button> &nbsp;
+                                        <a href="{{ route('admin#allMembers') }}" class="btn btn-secondary">Cancel</a>
                                     </div>
                                 </form>
 							</div>
 						</div>
-						<div class=" animate-box">
-							<div class="col-md-12 ">
-                                <h3 class="mt-5 pt-5">Member Details</h3>
+						<div class=" animate-box" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 45%">
+							<div class="p-5">
+                                <h3 class="text-center pb-3" style="font-size: var(--h3-font-size);font-weight: 900; color: var(--primary-color)">MEMBER DETAILS</h3>
                                 <form action="{{ route('admin#memberUpdated', $userData->id) }}" method="POST">
                                     @csrf
-                                    <label class="userManagement">Care Giver's Name</label><br>
-                                    <input name="member_caregiver_name" required="required" class="input-md col-md-12" type="text" value="{{ old('member_caregiver_name', $memberData->member_caregiver_name) }}"/><br><br>
+                                    <label class="userManagement">Caregiver's Name</label><br>
+                                    <input name="member_caregiver_name" required="required" class="input-md col-md-12" type="text" value="{{ old('member_caregiver_name', $memberData->member_caregiver_name) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
 
-									<label class="userManagement">Care Giver's Relationship</label><br>
-                                    <input name="member_caregiver_relation" class="input-md col-md-12" type="text" required="required" value="{{ old('member_caregiver_relation', $memberData->member_caregiver_relation) }}"/><br><br>
+									<label class="userManagement">Caregiver's Relationship</label><br>
+                                    <input name="member_caregiver_relation" class="input-md col-md-12" type="text" required="required" value="{{ old('member_caregiver_relation', $memberData->member_caregiver_relation) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
 
                                     <label class="userManagement">Member Medical Condition</label><br>
-                                    <input name="member_medical_condition" class="input-md col-md-12" type="text" required="required" value="{{ old('member_medical_condition', $memberData->member_medical_condition) }}"/><br><br>
+                                    <input name="member_medical_condition" class="input-md col-md-12" type="text" required="required" value="{{ old('member_medical_condition', $memberData->member_medical_condition) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
 
                                     <label class="userManagement">Member Medical Number</label><br>
-                                    <input name="member_medical_number" class="input-md col-md-12" type="text" required="required" value="{{ old('member_medical_number', $memberData->member_medical_number) }}"/>
+                                    <input name="member_medical_number" class="input-md col-md-12" type="text" required="required" value="{{ old('member_medical_number', $memberData->member_medical_number) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/>
 
 									{{-- <label class="userManagement">Member Meal Type</label><br> --}}
-                                    <input name="member_meal_type" class="input-md col-md-12" type="hidden" required="required" value="{{ old('member_meal_type', $memberData->member_meal_type) }}"/><br><br>
+                                    <input name="member_meal_type" class="input-md col-md-12" type="hidden" required="required" value="{{ old('member_meal_type', $memberData->member_meal_type) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
 
                                     <label class="userManagement">Duration</label><br>
-                                    <input name="member_meal_duration" required="required" class="input-md col-md-12" type="number" value="{{ old('member_meal_duration', $memberData->member_meal_duration) }}"/><br><br>
+                                    <input name="member_meal_duration" required="required" class="input-md col-md-12" type="number" value="{{ old('member_meal_duration', $memberData->member_meal_duration) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
 
-                                    <div class="text-center"> 
-                                        <button class="btn-primary">Update</button> &nbsp;
-                                        <a href="{{ route('admin#allMembers') }}">Cancel</a>
+                                    <div class="text-center pt-2"> 
+                                        <button class="btn btn-outline-success">Update</button> &nbsp;
+                                        <a href="{{ route('admin#allMembers') }}" class="btn btn-secondary">Cancel</a>
                                     </div>
                                 </form>
 							</div>
