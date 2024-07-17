@@ -51,37 +51,37 @@
                                 <table class="table table-hover table-responsive">
                                     <thead>
                                         <tr>
-                                            <th>No.</th>
-                                            <th>Member Name</th>
-                                            <th>Meal Name</th>
-                                            <th>Order Date</th>
-                                            <th>Order Time</th>
-                                            <th>Start Cooking Time</th>
-                                            <th>Menu Status</th>
-                                            <th>Order Received Status</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">No.</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">Member Name</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">Meal Name</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">Order Date</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">Order Time</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">Start Cooking Time</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">Menu Status</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">Order Received Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($orderData as $order)
                                         <tr>
-                                            <td>{{ $order -> id }}</td>
-                                            <td>{{ $order -> member_name }}</td>
-                                            <td>{{ $order -> order_menu_name }}</td>
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $order -> id }}</td>
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $order -> member_name }}</td>
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $order -> order_menu_name }}</td>
                                             <?php 
                                             $str = $order -> created_at;
                                             $newstr = explode(" ", $str);
                                             $date = $newstr[0];
                                             $time = $newstr[1];
                                             ?>
-                                            <td><?php echo $date;  ?></td>
-                                            <td><?php echo $time;  ?></td>
-                                            <td>
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"><?php echo $date;  ?></td>
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"><?php echo $time;  ?></td>
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">
                                                 <form action="{{ route('order#updateOrder', $order ->id) }}" method="GET">
                                                 <input type="text" name="start_cooking_time" value="{{ $order -> start_cooking_time }}" readonly/>
                                                 <button  type="submit" class="btn buttons">Start</button>
                                                 </form>
                                             </td>
-                                            <td>
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">
                                                 <form action="{{ route('order#updateOrder', $order ->id) }}" method="GET">
                                                 {{-- <input type="text" name="order_cooking_status" value="{{ $order -> order_cooking_status }}" /> --}}
                                                 <select name="order_cooking_status" value="{{ $order -> order_cooking_status }}">
@@ -92,7 +92,7 @@
                                                 <button  type="submit" class="btn buttons">Send Status</button>
                                                 </form>
                                             </td>
-                                            <td>
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">
                                                 {{ $order -> order_received_status}}
                                             </td>
                                             

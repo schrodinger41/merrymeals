@@ -51,48 +51,48 @@
                                 <table class="table table-responsive table-hover">
                                     <thead>
                                         <tr>
-                                            <th>No.</th>
-                                            <th>Member Name</th>
-                                            <th>Meal Name</th>
-                                            <th>Restaurant</th>
-                                            <th>Restaurant address</th>
-                                            <th>Order date</th>
-                                            <th>Order Time</th>
-                                            <th>Rider</th>
-                                            <th>Start Delivery Time</th>
-                                            <th>Delivery Status</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">No.</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">Member Name</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">Meal Name</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">Restaurant</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">Restaurant address</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">Order date</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">Order Time</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">Rider</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">Start Delivery Time</th>
+                                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">Delivery Status</th>
                                             
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach($deliveryData as $delivery)
                                         <tr>
-                                            <td>{{ $delivery->id }}</td>
-                                            <td>{{ $delivery->member_name }}</td>
-                                            <td>{{ $delivery->member_address }}</td>
-                                            <td>{{ $delivery->partner_restaurant_name }}</td>
-                                            <td>{{ $delivery->partner_address }}</td>
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $delivery->id }}</td>
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $delivery->member_name }}</td>
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $delivery->member_address }}</td>
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $delivery->partner_restaurant_name }}</td>
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $delivery->partner_address }}</td>
                                             <?php 
                                             $str = $delivery->created_at;
                                             $newstr = explode(" ", $str);
                                             $date = $newstr[0];
                                             $time = $newstr[1];
                                             ?>
-                                            <td>{{ $date }}</td>
-                                            <td>{{ $time }}</td>
-                                            <td>
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $date }}</td>
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $time }}</td>
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">
                                                 <form action="{{ route('delivery#updateDelivery', $delivery->id) }}" method="GET">
                                                     <input type="text" name="volunteer_name" value="{{ $delivery->volunteer_name }}" readonly/>
                                                     <button type="submit" class="btn buttons">Accept request</button>
                                                 </form>
-                                            </td>
-                                            <td>
+                                            </td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">
                                                 <form action="{{ route('delivery#updateDelivery', $delivery->id) }}" method="GET">
                                                     <input type="text" name="start_deliver_time" value="{{ $delivery->start_deliver_time }}" readonly/>
                                                     <button type="submit" class="btn buttons">Start</button>
                                                 </form>
                                             </td>
-                                            <td>
+                                            <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">
                                                 <form action="{{ route('delivery#updateDelivery', $delivery->id) }}" method="GET">
                                                     <select name="delivery_status" value="{{ $delivery->delivery_status }}">
                                                         <option value=""></option>
