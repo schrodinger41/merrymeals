@@ -61,12 +61,12 @@
 						<tr>
 							<th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"> <h4> <b> No. </b> </h4> </th>
 							<th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"> <h4> <b> Member Name </b> </h4> </th>
-              <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"> <h4> <b> Meal Name </b> </h4> </th>
-              <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"> <h4> <b> Order Date </b> </h4> </th>
-              <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"> <h4> <b> Order Time </b> </h4> </th>
+                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"> <h4> <b> Meal Name </b> </h4> </th>
+                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"> <h4> <b> Order Date </b> </h4> </th>
+                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"> <h4> <b> Order Time </b> </h4> </th>
 							<th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"> <h4> <b> Start Cooking Time </b> </h4> </th>
-              <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"> <h4> <b> Menu Status </b> </h4> </th>
-              <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"> <h4> <b> Order Received Status </b> </h4> </th>
+                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"> <h4> <b> Menu Status </b> </h4> </th>
+                            <th scope="col" class="text-center" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"> <h4> <b> Order Received Status </b> </h4> </th>
 						</tr>
 					</thead>
           @foreach ($orderData as $order)
@@ -74,18 +74,18 @@
 							<tr>
 								<td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $order ->id }}</td>
 								<td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $order ->member_name }}</td>
-                <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $order ->order_menu_name }}</td>
-                <?php 
-                $str = $order ->created_at;
-                $newstr = explode(" ", $str);
-                $date = $newstr[0];
-                $time = $newstr[1];
-                ?>
-                <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"><?php echo $date;  ?></td>
-								<td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"><?php echo $time;  ?></td>
-                <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $order ->start_cooking_time }}</td>
-                <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $order ->order_cooking_status }}</td>
-                <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $order ->order_received_status}}</td>
+                                <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $order ->order_menu_name }}</td>
+                                <?php 
+                                $str = $order ->created_at;
+                                $newstr = explode(" ", $str);
+                                $date = $newstr[0];
+                                $time = $newstr[1];
+                                ?>
+                                <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"><?php echo $date;  ?></td>
+                                                <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);"><?php echo $time;  ?></td>
+                                <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $order ->start_cooking_time }}</td>
+                                <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $order ->order_cooking_status }}</td>
+                                <td class="text-center" scope="row" style="border: var(--primary-color) solid 1px; color: var(--primary-color);">{{ $order ->order_received_status}}</td>
 							</tr>
 
 					</tbody>
