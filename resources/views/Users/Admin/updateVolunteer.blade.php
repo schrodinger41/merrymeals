@@ -68,7 +68,19 @@
                             <label class="userManagement">Email</label><br>
                             <input name='email' required="required" class="input-md col-md-12" type="text" value="{{ old('email', $userData->email) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
 
-                            {{-- <label class="userManagement">Vaccination</label><br> --}}
+                            <div class="text-center p-2"> 
+								<button class="btn btn-outline-success">Update</button> &nbsp;
+								<a href="{{ route('admin#allMembers') }}" class="btn btn-secondary">Cancel</a>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class=" animate-box" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 45%; height: 60%">
+					<div class="p-5">
+						<h3 class="text-center pb-3" style="font-size: var(--h3-font-size);font-weight: 900; color: var(--primary-color)">VOLUNTEER DETAILS</h3>
+						<form action="{{ route('admin#memberUpdated', $userData->id) }}" method="POST">
+							@csrf
+							{{-- <label class="userManagement">Vaccination</label><br> --}}
                             <input name="volunteer_vaccination" class="input-md col-md-12" type="hidden" value="{{ old('volunteer_vaccination', $volunteerData->volunteer_vaccination) }}"/>
 
                             <label class="userManagement">Duration</label><br>
