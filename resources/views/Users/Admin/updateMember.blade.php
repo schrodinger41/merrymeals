@@ -82,27 +82,27 @@
                                     @csrf
                                     <label class="userManagement">Caregiver's Name</label><br>
                                     <input name="member_caregiver_name" required="required" class="input-md col-md-12" type="text" value="{{ old('member_caregiver_name', $memberData->member_caregiver_name) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
-
-									<label class="userManagement">Caregiver's Relationship</label><br>
+                                
+                                    <label class="userManagement">Caregiver's Relationship</label><br>
                                     <input name="member_caregiver_relation" class="input-md col-md-12" type="text" required="required" value="{{ old('member_caregiver_relation', $memberData->member_caregiver_relation) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
-
+                                
                                     <label class="userManagement">Member Medical Condition</label><br>
                                     <input name="member_medical_condition" class="input-md col-md-12" type="text" required="required" value="{{ old('member_medical_condition', $memberData->member_medical_condition) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
-
+                                
                                     <label class="userManagement">Member Medical Number</label><br>
-                                    <input name="member_medical_number" class="input-md col-md-12" type="text" required="required" value="{{ old('member_medical_number', $memberData->member_medical_number) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/>
-
-									{{-- <label class="userManagement">Member Meal Type</label><br> --}}
-                                    <input name="member_meal_type" class="input-md col-md-12" type="hidden" required="required" value="{{ old('member_meal_type', $memberData->member_meal_type) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
-
+                                    <input name="member_medical_number" class="input-md col-md-12" type="text" required="required" value="{{ old('member_medical_number', $memberData->member_medical_number) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
+                                
+                                    <input name="member_meal_type" class="input-md col-md-12" type="hidden" required="required" value="{{ old('member_meal_type', $memberData->member_meal_type) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/>
+                                
                                     <label class="userManagement">Duration</label><br>
                                     <input name="member_meal_duration" required="required" class="input-md col-md-12" type="number" value="{{ old('member_meal_duration', $memberData->member_meal_duration) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
-
+                                
                                     <div class="text-center pt-2"> 
                                         <button class="btn btn-outline-success">Update</button> &nbsp;
                                         <a href="{{ route('admin#allMembers') }}" class="btn btn-secondary">Cancel</a>
                                     </div>
                                 </form>
+                                
 							</div>
 						</div>
 					</div>
