@@ -169,67 +169,69 @@
     </head>
 
     <body>
-        <div class="container" style="margin-top: 100px;">
-            <div class="card">
-                <div class="card-body">
-                    <div class="image-container">
-                        <img src="{{ asset('images/logo.png') }}" alt="Image for Donation Form">
+        <div class="background" style="background-image: url('{{ asset('images/login_img.jpg') }}');">
+            <div class="container" >
+                <div class="card">
+                    <div class="card-body">
+                        <div class="image-container">
+                            <img src="{{ asset('images/logo.png') }}" alt="Image for Donation Form">
+                        </div>
+                        <div class="title-text">
+                            <div class="title">Billing Information</div>
+                            <p>Please fill out the form below</p>
+                        </div>
+                        <div class="steps-container">
+                            <div class="step">1 <br> DONATION</div>
+                            <div class="step active">2 <br> BILLING</div>
+                            <div class="step">3 <br> PAYMENT</div>
+                            <div class="step">4 <br> COMPLETION</div>
+                        </div>
+                        <form id="form" action="{{ route('saveBilling') }}" method="POST">
+                            @csrf
+                            <div class="input-control">
+                                <label for="donor_first_name">First Name</label>
+                                <input name="donor_first_name" type="text" id="donor_first_name" class="form-control"
+                                    style="width:600px;" />
+                                <div class="error"></div>
+                            </div>
+                            <div class="input-control">
+                                <label for="donor_last_name">Last Name</label>
+                                <input name="donor_last_name" type="text" id="donor_last_name" class="form-control" />
+                                <div class="error"></div>
+                            </div>
+                            <div class="input-control">
+                                <label for="donor_address">Address</label>
+                                <input name="donor_address" type="text" id="donor_address" class="form-control" />
+                                <div class="error"></div>
+                            </div>
+                            <div class="input-control">
+                                <label for="donor_city">City</label>
+                                <input name="donor_city" type="text" id="donor_city" class="form-control" />
+                                <div class="error"></div>
+                            </div>
+                            <div class="input-control">
+                                <label for="donor_state">State</label>
+                                <input name="donor_state" type="text" id="donor_state" class="form-control" />
+                                <div class="error"></div>
+                            </div>
+                            <div class="input-control">
+                                <label for="donor_country">Country</label>
+                                <input name="donor_country" type="text" id="donor_country" class="form-control" />
+                                <div class="error"></div>
+                            </div>
+                            <div class="input-control">
+                                <label for="donor_email">Email</label>
+                                <input name="donor_email" type="text" id="donor_email" class="form-control" />
+                                <div class="error"></div>
+                            </div>
+                            <div class="input-control">
+                                <label for="donor_phone">Phone</label>
+                                <input name="donor_phone" type="number" id="donor_phone" class="form-control" />
+                                <div class="error"></div>
+                            </div>
+                            <button type="submit" class="btn btn-light fw-bold" data-mdb-ripple-color="dark">NEXT</button>
+                        </form>
                     </div>
-                    <div class="title-text">
-                        <div class="title">Billing Information</div>
-                        <p>Please fill out the form below</p>
-                    </div>
-                    <div class="steps-container">
-                        <div class="step">1 <br> DONATION</div>
-                        <div class="step active">2 <br> BILLING</div>
-                        <div class="step">3 <br> PAYMENT</div>
-                        <div class="step">4 <br> COMPLETION</div>
-                    </div>
-                    <form id="form" action="{{ route('saveBilling') }}" method="POST">
-                        @csrf
-                        <div class="input-control">
-                            <label for="donor_first_name">First Name</label>
-                            <input name="donor_first_name" type="text" id="donor_first_name" class="form-control"
-                                style="width:600px;" />
-                            <div class="error"></div>
-                        </div>
-                        <div class="input-control">
-                            <label for="donor_last_name">Last Name</label>
-                            <input name="donor_last_name" type="text" id="donor_last_name" class="form-control" />
-                            <div class="error"></div>
-                        </div>
-                        <div class="input-control">
-                            <label for="donor_address">Address</label>
-                            <input name="donor_address" type="text" id="donor_address" class="form-control" />
-                            <div class="error"></div>
-                        </div>
-                        <div class="input-control">
-                            <label for="donor_city">City</label>
-                            <input name="donor_city" type="text" id="donor_city" class="form-control" />
-                            <div class="error"></div>
-                        </div>
-                        <div class="input-control">
-                            <label for="donor_state">State</label>
-                            <input name="donor_state" type="text" id="donor_state" class="form-control" />
-                            <div class="error"></div>
-                        </div>
-                        <div class="input-control">
-                            <label for="donor_country">Country</label>
-                            <input name="donor_country" type="text" id="donor_country" class="form-control" />
-                            <div class="error"></div>
-                        </div>
-                        <div class="input-control">
-                            <label for="donor_email">Email</label>
-                            <input name="donor_email" type="text" id="donor_email" class="form-control" />
-                            <div class="error"></div>
-                        </div>
-                        <div class="input-control">
-                            <label for="donor_phone">Phone</label>
-                            <input name="donor_phone" type="number" id="donor_phone" class="form-control" />
-                            <div class="error"></div>
-                        </div>
-                        <button type="submit" class="btn btn-light fw-bold" data-mdb-ripple-color="dark">NEXT</button>
-                    </form>
                 </div>
             </div>
         </div>
