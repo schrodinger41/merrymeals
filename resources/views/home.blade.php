@@ -66,7 +66,7 @@
             </div>
 
 
-            <div class="home-content">
+            <div class="home-content" style="margin-top: 3%; margin-bottom: 3%">
                 <div class="column">
                     <h2>Join Us</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
