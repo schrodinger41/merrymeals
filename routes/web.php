@@ -161,7 +161,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/volunteerUpdated/{id}', [AdminController::class, 'saveUpdateV'])->name('admin#volunteerUpdated');
 
 
-   
     
 });
 

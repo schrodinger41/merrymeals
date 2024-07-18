@@ -81,15 +81,16 @@
 							@csrf
 							<label class="userManagement">Restaurant Name</label><br>
 							<input name="partnership_restaurant" class="input-md col-md-12" type="text" value="{{ old('partnership_restaurant', $partnerData->partnership_restaurant) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
-
+					
 							<label class="userManagement">Duration</label><br>
-							<input name="partnership_restaurant" class="input-md col-md-12" type="text" value="{{ old('partnership_duration', $partnerData->partnership_duration) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
-
+							<input name="partnership_duration" class="input-md col-md-12" type="text" value="{{ old('partnership_duration', $partnerData->partnership_duration) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
+					
 							<div class="text-center p-2"> 
-								<button class="btn btn-outline-success">Update</button> &nbsp;
-								<a href="{{ route('admin#allMembers') }}" class="btn btn-secondary">Cancel</a>
+									<button class="btn btn-outline-success">Update</button> &nbsp;
+									<a href="{{ route('admin#allMembers') }}" class="btn btn-secondary">Cancel</a>
 							</div>
-						</form>
+					</form>
+					
 					</div>
 				</div>
 			</div>

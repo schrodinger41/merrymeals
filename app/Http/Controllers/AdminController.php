@@ -233,40 +233,39 @@ class AdminController extends Controller
     }
 
     //Save Update Partner
-    public function saveUpdateP(Request $request, $user_id){
+    public function saveUpdateP(Request $request, $user_id)
+    {
         $updatePartner = $this->requestUpdatePartner($request);
-        Partner::where('id', $user_id)->update($updatePartner);
+        Partner::where('user_id', $user_id)->update($updatePartner);
 
-        return back()->with(['dataInform' => 'Profile Has Been Updated Sucessfully!']);
+        return back()->with(['dataInform' => 'Profile Has Been Updated Successfully!']);
     }
 
-    private function requestUpdatePartner($request){
-        $arr = [
-            'partnership_restaurant' => $request-> partnership_restaurant,
-            'partnership_duration'=> $request->partnership_duration,
-            'created_at' => Carbon::now(),
+    private function requestUpdatePartner($request)
+    {
+        return [
+            'partnership_restaurant' => $request->partnership_restaurant,
+            'partnership_duration' => $request->partnership_duration,
             'updated_at' => Carbon::now(),
         ];
-        return $arr;
     }
 
     //Save Update Volunteer
     public function saveUpdateV(Request $request, $user_id){
         $updateVolunteer = $this->requestUpdateVolunteer($request);
-        Volunteer::where('id', $user_id)->update($updateVolunteer);
-
-        return back()->with(['dataInform' => 'Profile Has Been Updated Sucessfully!']);
+        Volunteer::where('user_id', $user_id)->update($updateVolunteer);
+    
+        return back()->with(['dataInform' => 'Profile Has Been Updated Successfully!']);
     }
 
     private function requestUpdateVolunteer($request){
         $arr = [
-            'volunteer_vaccination	' => $request-> volunteer_vaccination	,
+            'volunteer_vaccination' => $request->volunteer_vaccination,
             'volunteer_duration'=> $request->volunteer_duration,
-            'volunteer_available' => $request->volunteer_available,
-            'created_at' => Carbon::now(),
+            'volunteer_available' => implode(', ', $request->volunteer_available), // Convert array to comma-separated string
             'updated_at' => Carbon::now(),
         ];
-
+    
         return $arr;
     }
 

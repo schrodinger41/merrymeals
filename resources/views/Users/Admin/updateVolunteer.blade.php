@@ -78,22 +78,36 @@
 				<div class=" animate-box" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 45%; height: 60%">
 					<div class="p-5">
 						<h3 class="text-center pb-3" style="font-size: var(--h3-font-size);font-weight: 900; color: var(--primary-color)">VOLUNTEER DETAILS</h3>
-						<form action="{{ route('admin#memberUpdated', $userData->id) }}" method="POST">
-							@csrf
-							{{-- <label class="userManagement">Vaccination</label><br> --}}
+						<form action="{{ route('admin#volunteerUpdated', $userData->id) }}" method="POST">
+                            @csrf
+                            {{-- Vaccination --}}
                             <input name="volunteer_vaccination" class="input-md col-md-12" type="hidden" value="{{ old('volunteer_vaccination', $volunteerData->volunteer_vaccination) }}"/>
-
+                        
+                            {{-- Duration --}}
                             <label class="userManagement">Duration</label><br>
                             <input name="volunteer_duration" class="input-md col-md-12" type="text" value="{{ old('volunteer_duration', $volunteerData->volunteer_duration) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
-
+                        
+                            {{-- Available --}}
                             <label class="userManagement">Available</label><br>
-                            <input name="volunteer_available" class="input-md col-md-12" type="text" value="{{ old('volunteer_available', $volunteerData->volunteer_available) }}" style="border: 1px var(--secondary-color) solid; padding: 6px"/><br><br>
-
+                            <div>
+                                @php
+                                    $availableDays = explode(', ', $volunteerData->volunteer_available); // Convert stored string back to array
+                                @endphp
+                                <label><input type="checkbox" name="volunteer_available[]" value="Monday" {{ in_array('Monday', $availableDays) ? 'checked' : '' }}> Monday</label>
+                                <label><input type="checkbox" name="volunteer_available[]" value="Tuesday" {{ in_array('Tuesday', $availableDays) ? 'checked' : '' }}> Tuesday</label>
+                                <label><input type="checkbox" name="volunteer_available[]" value="Wednesday" {{ in_array('Wednesday', $availableDays) ? 'checked' : '' }}> Wednesday</label>
+                                <label><input type="checkbox" name="volunteer_available[]" value="Thursday" {{ in_array('Thursday', $availableDays) ? 'checked' : '' }}> Thursday</label>
+                                <label><input type="checkbox" name="volunteer_available[]" value="Friday" {{ in_array('Friday', $availableDays) ? 'checked' : '' }}> Friday</label>
+                                <label><input type="checkbox" name="volunteer_available[]" value="Saturday" {{ in_array('Saturday', $availableDays) ? 'checked' : '' }}> Saturday</label>
+                                <label><input type="checkbox" name="volunteer_available[]" value="Sunday" {{ in_array('Sunday', $availableDays) ? 'checked' : '' }}> Sunday</label>
+                            </div>
+                        
                             <div class="text-center pt-2"> 
                                 <button class="btn btn-outline-success">Update</button> &nbsp;
                                 <a href="{{ route('admin#allMembers') }}" class="btn btn-secondary">Cancel</a>
                             </div>
                         </form>
+                        
                     </div>
                 </div>
             </div>

@@ -20,6 +20,7 @@
                 margin: 0;
                 font-family: Arial, sans-serif;
                 background-color: #f8f9fa;
+                
             }
 
             .container {
@@ -29,6 +30,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+        
             }
 
             .card {
@@ -62,7 +64,7 @@
                 margin: 10px auto;
                 /* Centers the button horizontally */
                 width: 50%;
-                background-color: #3CB815;
+                background-color: var(--secondary-color);
                 color: #ffffff;
                 padding: 10px 20px;
                 border: none;
@@ -72,7 +74,8 @@
             }
 
             .btn:hover {
-                background-color: #32a10e;
+                background-color:var(--primary-color);
+                color: #ffffff;
             }
 
 
@@ -87,7 +90,7 @@
 
             .form-control:focus {
                 outline: none;
-                border-color: #3CB815;
+                border-color: #3cb815;
             }
 
             .input-control {
@@ -169,7 +172,7 @@
 
             .step.active {
                 color: #ffffff;
-                background-color: #3CB815;
+                background-color: var(--secondary-color);
             }
         </style>
     </head>
