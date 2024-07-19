@@ -112,7 +112,7 @@
 										}
 								?>
 								<div class="card-text">
-										<div><i class="fas fa-user" style="color: #e4e4e4;"></i> {{ $menu->menu_description }}</div>
+										<div><i style="color: #e4e4e4;"></i> {{ $menu->menu_description }}</div>
 										<div class="d-flex justify-content-between align-items-center">
 												<div class="topleft">{{ $DistanceKM }} Km&nbsp;near you</div>
 												{{-- <div class="topright">{{ $meal_type }}</div> --}}

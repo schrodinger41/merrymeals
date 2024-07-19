@@ -142,29 +142,6 @@
                             <div class="col-8">{{ $userData->phone }}</div>
                         </div>
                     </div>
-                    
-
-                    <!-- RECENT MEAL FEATURE -->
-                    <div class="card mb-3 m-2" style="width: 335px; background-color: var(--primary-color); color: white; border: 2px #344d3b solid; border-radius: 40px;">
-                        <div class="card-header align-items-center justify-content-center"> 
-                            <h4 class="text-center"> RECENT ORDERS </h4>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">ORDER #1</h4>
-                            <div class="card-text">
-                                <p> <i class="fas fa-user" style="color: #e4e4e4;"></i> MEMBER USERNAME</p>
-                                <p> <i class="fas fa-utensils"></i> ORDERED MEAL </p>
-                                <p> <i class="fas fa-map-marker-alt"></i> ADDRESS </p>
-                            </div>
-                            <hr>
-                            <h4 class="card-title">ORDER #2</h4>
-                            <div class="card-text">
-                                <p> <i class="fas fa-user" style="color: #e4e4e4;"></i> MEMBER USERNAME</p>
-                                <p> <i class="fas fa-utensils"></i> ORDERED MEAL </p>
-                                <p> <i class="fas fa-map-marker-alt"></i> ADDRESS </p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
